@@ -3,7 +3,7 @@
 set -e
 
 echo "Building Flux Docker image..."
-docker build -t flux:local docker/flux
+docker build -t flux:local .dev/flux
 
 echo "Verifying Flux Benchmarks..."
 docker run --rm --name flux \
