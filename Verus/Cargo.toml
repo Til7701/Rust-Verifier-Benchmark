@@ -1,0 +1,10 @@
+[package]
+name = "verus-test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+vstd = { version = "0.0.0-2026-04-20-1748" }
+
+[package.metadata.verus]
+verify = true
