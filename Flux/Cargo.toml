@@ -1,0 +1,10 @@
+[package]
+name = "flux-test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+flux-rs = { git = "https://github.com/flux-rs/flux.git", rev = "009f708f63649f2b0af5cc3f9e6792384cf8eed6" }
+
+[package.metadata.flux]
+enabled = true
