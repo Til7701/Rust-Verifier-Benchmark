@@ -23,3 +23,7 @@ RUN unzip verus.zip -d /opt/verus && \
     rm verus.zip
 RUN chmod +x /opt/verus/verus-x86-linux/verus
 ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
+
+# Install VeriFast
+ADD --unpack=true https://github.com/verifast/verifast/releases/download/26.01/verifast-26.01-linux.tar.gz /opt/verifast
+ENV PATH="/opt/verifast/verifast-26.01/bin:${PATH}"

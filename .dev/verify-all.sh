@@ -14,6 +14,12 @@ cargo kani
 cd ..
 echo "Successfully verified Kani Examples"
 
+echo "Verifying VeriFast Examples"
+cd VeriFast
+cargo verifast
+cd ..
+echo "Successfully verified VeriFast Examples"
+
 echo "Verifying Verus Examples"
 cd Verus
 cargo verus verify
