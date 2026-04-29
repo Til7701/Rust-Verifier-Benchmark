@@ -1,0 +1,7 @@
+[package]
+name = "kani-test"
+version = "0.1.0"
+edition = "2024"
+
+[target.'cfg(kani_ra)'.dependencies]
+kani = { git = "https://github.com/model-checking/kani", rev = "kani-0.67.0" }
