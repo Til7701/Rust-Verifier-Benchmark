@@ -1,6 +1,6 @@
-FROM ubuntu:24.04
+FROM debian:trixie-20260421
 
-RUN apt-get update && apt-get install -y rustup gcc z3 unzip curl opam
+RUN apt-get update && apt-get install -y rustup gcc z3 unzip curl
 
 WORKDIR /app
 
@@ -14,7 +14,8 @@ WORKDIR /opt/flux
 RUN cargo xtask install
 
 # Install Kani
-RUN cargo install --locked kani-verifier --version 0.67.0 && cargo kani setup
+RUN cargo install --locked kani-verifier --version 0.67.0
+RUN cargo kani setup
 
 # Install VeriFast
 ADD --unpack=true https://github.com/verifast/verifast/releases/download/26.01/verifast-26.01-linux.tar.gz /opt/verifast
@@ -29,11 +30,14 @@ RUN chmod +x /opt/verus/verus-x86-linux/verus
 ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
 
 # Install Aeneas
-RUN opam init
-RUN opam switch create 5.3.0
-RUN opam install ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
-  ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
-ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
-WORKDIR /opt/aeneas
-RUN make setup-charon
-RUN make
+#RUN apt-get update && apt-get install -y opam libgmp-dev pkg-config
+#RUN opam init --disable-sandboxing -y
+#RUN eval $(opam env)
+#RUN opam switch create 5.3.0
+#RUN opam install -y ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
+#    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
+#RUN opam install -y dune ocaml-lsp-server odoc ocamlformat utop
+#ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
+#WORKDIR /opt/aeneas
+#RUN make setup-charon
+#RUN make
