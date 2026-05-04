@@ -1,6 +1,9 @@
 FROM debian:trixie-20260421
 
-RUN apt-get update && apt-get install -y rustup gcc z3 unzip curl
+RUN apt-get update && apt-get install -y rustup gcc z3 unzip curl \
+    openjdk-21-jdk \
+    opam autoconf libcairo2-dev libexpat1-dev libgmp-dev libgtk-3-dev libgtksourceview-3.0-dev pkg-config zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -19,7 +22,6 @@ RUN cargo kani setup
 
 # Install Prusti
 WORKDIR /app
-RUN apt-get install -y openjdk-21-jdk
 RUN rustup install nightly-2023-08-15-x86_64-unknown-linux-gnu
 ADD https://github.com/viperproject/prusti-dev/releases/download/v-2023-08-22-1715/prusti-release-ubuntu.zip prusti.zip
 RUN unzip prusti.zip -d /opt/prusti && rm prusti.zip
@@ -42,7 +44,6 @@ RUN chmod +x /opt/verus/verus-x86-linux/verus
 ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
 
 # Install Creusot
-RUN apt-get install -y opam autoconf libcairo2-dev libexpat1-dev libgmp-dev libgtk-3-dev libgtksourceview-3.0-dev pkg-config zlib1g-dev
 RUN opam init --disable-sandboxing -y
 ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
 WORKDIR /opt/creusot
