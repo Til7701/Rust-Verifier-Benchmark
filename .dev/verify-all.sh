@@ -2,6 +2,13 @@
 
 set -e
 
+echo "Verifying Creusot Examples"
+cd Creusot
+cargo creusot init
+cargo creusot prove
+cd ..
+echo "Successfully verified Creusot Examples"
+
 echo "Verifying Flux Examples"
 cd Flux
 cargo flux

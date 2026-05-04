@@ -53,3 +53,10 @@ ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
 #WORKDIR /opt/aeneas
 #RUN make setup-charon
 #RUN make
+
+# Install Creusot
+RUN apt-get install -y opam autoconf libcairo2-dev libexpat1-dev libgmp-dev libgtk-3-dev libgtksourceview-3.0-dev pkg-config zlib1g-dev
+RUN opam init --disable-sandboxing -y
+ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
+WORKDIR /opt/creusot
+RUN ./INSTALL
