@@ -17,15 +17,27 @@ RUN cargo xtask install
 RUN cargo install --locked kani-verifier --version 0.67.0
 RUN cargo kani setup
 
+# Install Prusti
+WORKDIR /app
+RUN apt-get install -y openjdk-21-jdk
+RUN rustup install nightly-2023-08-15-x86_64-unknown-linux-gnu
+ADD https://github.com/viperproject/prusti-dev/releases/download/v-2023-08-22-1715/prusti-release-ubuntu.zip prusti.zip
+RUN unzip prusti.zip -d /opt/prusti && rm prusti.zip
+RUN chmod +x /opt/prusti/cargo-prusti
+RUN chmod +x /opt/prusti/prusti-rustc
+RUN chmod +x /opt/prusti/prusti-driver
+RUN chmod +x /opt/prusti/viper_tools/z3/bin/z3
+ENV PATH="/opt/prusti:${PATH}"
+
 # Install VeriFast
 ADD --unpack=true https://github.com/verifast/verifast/releases/download/26.01/verifast-26.01-linux.tar.gz /opt/verifast
 ENV PATH="/opt/verifast/verifast-26.01/bin:${PATH}"
 
 # Install Verus
+WORKDIR /app
 RUN rustup install 1.95.0-x86_64-unknown-linux-gnu
 ADD https://github.com/verus-lang/verus/releases/download/release%2F0.2026.04.24.f8e1704/verus-0.2026.04.24.f8e1704-x86-linux.zip verus.zip
-RUN unzip verus.zip -d /opt/verus && \
-    rm verus.zip
+RUN unzip verus.zip -d /opt/verus && rm verus.zip
 RUN chmod +x /opt/verus/verus-x86-linux/verus
 ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
 
