@@ -2,6 +2,6 @@
 
 ## Benchmarks
 
-| Name                             | From                                                                         | Verus |
-|----------------------------------|------------------------------------------------------------------------------|-------|
-| [octuple](benchmarks/octuple.md) | [Verus Docs](https://verus-lang.github.io/verus/guide/requires_ensures.html) | ✅     |
+| Name                             | From       | Creusot | Flux | Kani | Prusti | Verus | VeriFast |
+|----------------------------------|------------|---------|------|------|--------|-------|----------|
+| [octuple](benchmarks/octuple.md) | Verus Docs | ✅       | (✅)  | ✅    |        | ✅     | N/A      |
