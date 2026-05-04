@@ -41,22 +41,20 @@ RUN unzip verus.zip -d /opt/verus && rm verus.zip
 RUN chmod +x /opt/verus/verus-x86-linux/verus
 ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
 
-# Install Aeneas
-#RUN apt-get update && apt-get install -y opam libgmp-dev pkg-config
-#RUN opam init --disable-sandboxing -y
-#RUN eval $(opam env)
-#RUN opam switch create 5.3.0
-#RUN opam install -y ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
-#    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
-#RUN opam install -y dune ocaml-lsp-server odoc ocamlformat utop
-#ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
-#WORKDIR /opt/aeneas
-#RUN make setup-charon
-#RUN make
-
 # Install Creusot
 RUN apt-get install -y opam autoconf libcairo2-dev libexpat1-dev libgmp-dev libgtk-3-dev libgtksourceview-3.0-dev pkg-config zlib1g-dev
 RUN opam init --disable-sandboxing -y
 ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
 WORKDIR /opt/creusot
 RUN ./INSTALL
+
+# Install Aeneas
+RUN eval $(opam env)
+RUN opam switch create 5.3.0
+RUN opam install -y ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
+    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
+RUN opam install -y dune ocaml-lsp-server odoc ocamlformat utop
+ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
+WORKDIR /opt/aeneas
+RUN make setup-charon
+RUN eval $(opam env) && make
