@@ -3,9 +3,29 @@ FROM debian:trixie-20260421
 RUN apt-get update && apt-get install -y rustup gcc z3 unzip curl \
     openjdk-21-jdk \
     opam autoconf libcairo2-dev libexpat1-dev libgmp-dev libgtk-3-dev libgtksourceview-3.0-dev pkg-config zlib1g-dev \
+    elan \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
+
+# Install Aeneas
+RUN opam init --disable-sandboxing -y
+RUN eval $(opam env)
+RUN opam switch create 5.3.0
+RUN opam install -y ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
+    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
+RUN opam install -y dune ocaml-lsp-server odoc ocamlformat utop
+ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
+WORKDIR /opt/aeneas
+RUN make setup-charon
+RUN eval $(opam env) && make
+ENV PATH="/opt/aeneas/bin:/opt/aeneas/charon/bin:${PATH}"
+RUN elan toolchain install leanprover/lean4:v4.28.0-rc1
+
+# Install Creusot
+ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
+WORKDIR /opt/creusot
+RUN ./INSTALL
 
 # Install Liquid Fixpoint (for Flux)
 ADD --unpack=true https://github.com/ucsd-progsys/liquid-fixpoint/releases/download/nightly-01-14-2026/fixpoint-x86_64-linux-gnu.tar.gz /opt/liquid-fixpoint
@@ -42,23 +62,3 @@ ADD https://github.com/verus-lang/verus/releases/download/release%2F0.2026.04.24
 RUN unzip verus.zip -d /opt/verus && rm verus.zip
 RUN chmod +x /opt/verus/verus-x86-linux/verus
 ENV PATH="/opt/verus/verus-x86-linux:${PATH}"
-
-# Install Creusot
-RUN opam init --disable-sandboxing -y
-ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
-WORKDIR /opt/creusot
-RUN ./INSTALL
-
-# Install Aeneas
-RUN eval $(opam env)
-RUN opam switch create 5.3.0
-RUN opam install -y ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
-    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
-RUN opam install -y dune ocaml-lsp-server odoc ocamlformat utop
-ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
-WORKDIR /opt/aeneas
-RUN make setup-charon
-RUN eval $(opam env) && make
-ENV PATH="/opt/aeneas/bin:/opt/aeneas/charon/bin:${PATH}"
-RUN apt-get update && apt-get install -y elan
-RUN elan toolchain install leanprover/lean4:v4.28.0-rc1

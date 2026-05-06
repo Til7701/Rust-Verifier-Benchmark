@@ -7,7 +7,7 @@ open AeneasTest
 
 @[step]
 theorem add_spec (a b : Std.U32) (h : a.val + b.val < Std.U32.max) :
-    add a b { c => c.val = a.val + b.val } := by
+  add a b ⦃ c => c.val = a.val + b.val ⦄ := by
   unfold add
   step
 
