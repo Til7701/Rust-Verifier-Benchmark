@@ -1,0 +1,5 @@
+proofs/.lake
+proofs/AeneasTest/Code/Funs.lean
+proofs/AeneasTest/Code/Types.lean
+proofs/lake-manifest.json
+aeneas_test.llbc

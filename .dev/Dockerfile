@@ -59,3 +59,6 @@ ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0
 WORKDIR /opt/aeneas
 RUN make setup-charon
 RUN eval $(opam env) && make
+ENV PATH="/opt/aeneas/bin:/opt/aeneas/charon/bin:${PATH}"
+RUN apt-get update && apt-get install -y elan
+RUN elan toolchain install leanprover/lean4:v4.28.0-rc1
