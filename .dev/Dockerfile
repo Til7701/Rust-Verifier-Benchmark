@@ -41,9 +41,21 @@ RUN cargo install --locked kani-verifier --version 0.67.0
 RUN cargo kani setup
 
 # Install Prusti
-WORKDIR /app
-RUN rustup install nightly-2023-08-15-x86_64-unknown-linux-gnu
-ADD https://github.com/viperproject/prusti-dev/releases/download/v-2023-08-22-1715/prusti-release-ubuntu.zip prusti.zip
+#RUN apt-get update && apt-get install -y openssl libssl-dev
+#ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+#ADD https://github.com/viperproject/prusti-dev.git /opt/prusti
+#WORKDIR /opt/prusti
+#RUN rm rust-toolchain
+#RUN touch rust-toolchain
+#RUN echo "[toolchain]" >> rust-toolchain
+#RUN echo "channel = \"nightly-2024-01-15\""  >> rust-toolchain
+#RUN echo "components = [ \"rustc-dev\", \"llvm-tools-preview\", \"rust-std\", \"rustfmt\", \"clippy\" ]"  >> rust-toolchain
+#RUN echo "profile = \"minimal\""  >> rust-toolchain
+#RUN ./x.py setup
+#RUN ./x.py build --release
+
+RUN rustup install nightly-2023-09-15
+ADD https://github.com/viperproject/prusti-dev/releases/download/v-2024-03-26-1504/prusti-release-ubuntu.zip prusti.zip
 RUN unzip prusti.zip -d /opt/prusti && rm prusti.zip
 RUN chmod +x /opt/prusti/cargo-prusti
 RUN chmod +x /opt/prusti/prusti-rustc
