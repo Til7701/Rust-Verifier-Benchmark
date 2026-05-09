@@ -1,3 +1,0 @@
-[[require]]
-name = "aeneas"
-path = "/opt/aeneas/backends/lean"
