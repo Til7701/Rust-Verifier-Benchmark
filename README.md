@@ -12,12 +12,14 @@ If an entry is not following the legend, an explanation can be found in the link
 | Entry | Explanation                                                                                    |
 |-------|------------------------------------------------------------------------------------------------|   
 | ✅     | Implemented successfully. The implementation can be found in the subdirectory of the verifier. |
+| ❌     | Cannot be implemented. See example file.                                                       |
 | N/A   | The example is not applicable to the verifier.                                                 |
-| TODO  | Not implemented yet.                                                                           |
+|       | Not implemented yet.                                                                           |
 
-| Name                           | Aeneas | Creusot | Flux | Kani | Prusti | Verus | VeriFast |
-|--------------------------------|--------|---------|------|------|--------|-------|----------|
-| [octuple](examples/octuple.md) | ✅      | ✅       | ✅    | ✅    | TODO   | ✅     | N/A      |
+| Name                                 | Aeneas | Creusot | Flux | Kani | Prusti | Verus | VeriFast |
+|--------------------------------------|--------|---------|------|------|--------|-------|----------|
+| [octuple](examples/octuple.md)       | ✅      | ✅       | ✅    | ✅    |        | ✅     | N/A      |
+| [gnome_sort](examples/gnome_sort.md) |        | ✅       |      |      |        |       |          |
 
 ## Usage
 

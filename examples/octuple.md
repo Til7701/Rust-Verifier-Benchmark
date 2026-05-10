@@ -1,7 +1,5 @@
 # Octuple
 
-Source: https://verus-lang.github.io/verus/guide/requires_ensures.html
-
 A simple function to multiply a number by 8.
 
 ```rust
@@ -12,7 +10,11 @@ fn octuple(x1: i8) -> i8 {
 }
 ```
 
-## License
+## Source
+
+https://verus-lang.github.io/verus/guide/requires_ensures.html
+
+### License
 
 MIT License
 
