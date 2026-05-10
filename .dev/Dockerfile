@@ -4,28 +4,33 @@ RUN apt-get update && apt-get install -y rustup gcc z3 unzip curl \
     openjdk-21-jdk \
     opam autoconf libcairo2-dev libexpat1-dev libgmp-dev libgtk-3-dev libgtksourceview-3.0-dev pkg-config zlib1g-dev \
     elan \
+    openssl libssl-dev \
     && rm -rf /var/lib/apt/lists/*
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
 WORKDIR /app
 
 # Install Aeneas
 RUN opam init --disable-sandboxing -y
-RUN eval $(opam env)
 RUN opam switch create 5.3.0
 RUN opam install -y ppx_deriving visitors easy_logging zarith yojson core_unix odoc \
-    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib
-RUN opam install -y dune ocaml-lsp-server odoc ocamlformat utop
+    ocamlgraph menhir ocamlformat.0.27.0 unionFind zarith progress domainslib \
+    dune ocaml-lsp-server odoc ocamlformat utop \
+    && opam clean
 ADD https://github.com/AeneasVerif/aeneas.git#a2fcf1923d16684cec638f5503da11acd0ef002d /opt/aeneas
 WORKDIR /opt/aeneas
-RUN make setup-charon
-RUN eval $(opam env) && make
+RUN make setup-charon \
+    && eval $(opam env) \
+    && make \
+    && rm -r /opt/aeneas/charon/charon
 ENV PATH="/opt/aeneas/bin:/opt/aeneas/charon/bin:${PATH}"
 RUN elan toolchain install leanprover/lean4:v4.28.0-rc1
 
 # Install Creusot
 ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
 WORKDIR /opt/creusot
-RUN ./INSTALL
+RUN ./INSTALL \
+    && rm -r /opt/creusot
 
 # Install Liquid Fixpoint (for Flux)
 ADD --unpack=true https://github.com/ucsd-progsys/liquid-fixpoint/releases/download/nightly-01-14-2026/fixpoint-x86_64-linux-gnu.tar.gz /opt/liquid-fixpoint
@@ -34,15 +39,15 @@ ENV PATH="/opt/liquid-fixpoint:${PATH}"
 # Install Flux
 ADD https://github.com/flux-rs/flux.git#009f708f63649f2b0af5cc3f9e6792384cf8eed6 /opt/flux
 WORKDIR /opt/flux
-RUN cargo xtask install
+RUN cargo xtask install \
+    && rm -r /opt/flux
 
 # Install Kani
+RUN rustup install 1.95.0 --profile minimal
 RUN cargo install --locked kani-verifier --version 0.67.0
 RUN cargo kani setup
 
 # Install Prusti
-#RUN apt-get update && apt-get install -y openssl libssl-dev
-#ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 #ADD https://github.com/viperproject/prusti-dev.git#auto-update-nightly-2024-01-15 /opt/prusti
 #WORKDIR /opt/prusti
 #RUN ./x.py setup
@@ -63,7 +68,6 @@ ENV PATH="/opt/verifast/verifast-26.01/bin:${PATH}"
 
 # Install Verus
 WORKDIR /app
-RUN rustup install 1.95.0-x86_64-unknown-linux-gnu
 ADD https://github.com/verus-lang/verus/releases/download/release%2F0.2026.04.24.f8e1704/verus-0.2026.04.24.f8e1704-x86-linux.zip verus.zip
 RUN unzip verus.zip -d /opt/verus && rm verus.zip
 RUN chmod +x /opt/verus/verus-x86-linux/verus
