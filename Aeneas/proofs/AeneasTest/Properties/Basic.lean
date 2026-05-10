@@ -1,8 +1,7 @@
 import Aeneas
 import AeneasTest.Code.Funs
 
-open Aeneas
-open Aeneas.Std
+open Aeneas Aeneas.Std Result ControlFlow Error
 
 open AeneasTest
 
@@ -16,8 +15,11 @@ theorem add_spec (a b : U32) (h : a.val + b.val < U32.max) :
   simp_all
 
 @[step]
-theorem octuple_spec (x1 : I8) (h : -16#i8 ≤ x1.val && x1.val < 16#i8) :
-  octuple.octuple x1 ⦃ x8 => x8.val = x1.val * 8#i8 ⦄ := by
+theorem octuple_spec (x1 : I8) (h : -16 ≤ x1.val ∧ x1.val < 16) :
+  octuple.octuple x1 ⦃ x8 => x8.val = x1.val * 8 ⦄ := by
   unfold octuple.octuple
-  step*
+  step
+  step
+  step
   simp_all
+  scalar_tac
