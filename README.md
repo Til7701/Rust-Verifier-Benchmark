@@ -2,6 +2,17 @@
 
 A benchmark to compare Rust verifiers. This repository is currently under construction.
 
+## Verifiers
+
+| Verifier | Version                                                                                                 | Links                                                                                                                          |
+|----------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Aeneas   | [a2fcf19](https://github.com/AeneasVerif/aeneas/tree/a2fcf1923d16684cec638f5503da11acd0ef002d)          | [GitHub](https://github.com/AeneasVerif/aeneas)                                                                                |
+| Creusot  | [0.11.0](https://github.com/creusot-rs/creusot/releases/tag/v0.11.0)                                    | [Website](https://creusot.rs/) \| [GitHub](https://github.com/creusot-rs/creusot)                                              |
+| Flux     | [009f708](https://github.com/flux-rs/flux/tree/009f708f63649f2b0af5cc3f9e6792384cf8eed6)                | [Docs](https://flux-rs.github.io/flux/) \| [GitHub](https://github.com/flux-rs/flux)                                           |
+| Kani     | [0.67.0](https://github.com/model-checking/kani/releases/tag/kani-0.67.0)                               | [Docs](https://model-checking.github.io/kani/getting-started.html) \| [GitHub](https://github.com/model-checking/kani)         |
+| VeriFast | [26.01](https://github.com/verifast/verifast/releases/tag/26.01)                                        | [Docs](https://verifast.github.io/verifast/rust-reference/introduction.html) \| [GitHub](https://github.com/verifast/verifast) |
+| Verus    | [0.2026.04.24.f8e1704](https://github.com/verus-lang/verus/releases/tag/release%2F0.2026.04.24.f8e1704) | [Docs](https://verus-lang.github.io/verus/guide/) \| [GitHub](https://github.com/verus-lang/verus)                             |
+
 ## Examples
 
 The following table shows all examples and whether they were implemented successfully using the given verifiers.

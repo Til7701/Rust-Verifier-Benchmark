@@ -8,8 +8,9 @@ ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 RUN rustup toolchain install nightly-2026-02-07 --profile minimal # Aeneas
 RUN rustup toolchain install nightly-2026-02-27 --profile minimal # Creusot
 RUN rustup toolchain install nightly-2025-11-25 --profile minimal # Flux
+RUN rustup toolchain install 1.95.0 --profile minimal # Kani
+RUN rustup toolchain install 1.95.0 --profile minimal # VeriFast
 RUN rustup toolchain install 1.95.0 --profile minimal # Verus
-RUN rustup toolchain install 1.93.0 --profile minimal # Kani
 
 FROM base AS opam-base
 
@@ -49,7 +50,8 @@ RUN apt-get update && apt-get install -y \
 ADD https://github.com/creusot-rs/creusot.git#v0.11.0 /opt/creusot
 WORKDIR /opt/creusot
 RUN ./INSTALL \
-    && rm -r /opt/creusot
+    && rm -r /opt/creusot \
+    && rm -r /root/.local/share/creusot/_opam/.opam-switch
 
 FROM build-base AS flux-build
 
