@@ -1,4 +1,4 @@
-FROM debian:trixie-20260421 AS base
+FROM debian:trixie-20260505-slim AS base
 
 RUN apt-get update && apt-get install -y rustup z3 unzip curl \
     openjdk-21-jdk-headless \
