@@ -9,6 +9,7 @@ RUN rustup toolchain install nightly-2026-02-07 --profile minimal # Aeneas
 RUN rustup toolchain install nightly-2026-02-27 --profile minimal # Creusot
 RUN rustup toolchain install nightly-2025-11-25 --profile minimal # Flux
 RUN rustup toolchain install 1.95.0 --profile minimal # Verus
+RUN rustup toolchain install 1.93.0 --profile minimal # Kani
 
 FROM base AS opam-base
 
@@ -17,7 +18,8 @@ RUN apt-get update && apt-get install -y opam \
 
 FROM base AS build-base
 
-
+RUN apt-get update && apt-get install -y gcc \
+    && rm -rf /var/lib/apt/lists/*
 
 FROM opam-base AS opam-build-base
 
