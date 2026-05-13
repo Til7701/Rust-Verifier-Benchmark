@@ -18,9 +18,11 @@ jobs:
         with:
           file: .dev/Dockerfile
           push: false
+          load: true
           tags: rust-verifiers:local
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Verify Examples
         run: |
           docker run --rm --name rust-verifiers \
