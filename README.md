@@ -27,16 +27,19 @@ If an entry is not following the legend, an explanation can be found in the link
 | N/A   | The example is not applicable to the verifier.                                                 |
 |       | Not implemented yet.                                                                           |
 
-| Name                                 | Aeneas | Creusot | Flux | Kani | Prusti | Verus | VeriFast |
-|--------------------------------------|--------|---------|------|------|--------|-------|----------|
-| [octuple](examples/octuple.md)       | ✅      | ✅       | ✅    | ✅    |        | ✅     | N/A      |
-| [gnome_sort](examples/gnome_sort.md) |        | ✅       |      |      |        |       |          |
+| Name                                       | Aeneas | Creusot | Flux | Kani | Prusti | Verus | VeriFast |
+|--------------------------------------------|--------|---------|------|------|--------|-------|----------|
+| [ackermann](examples/ackermann.md)         |        |         |      |      |        |       |          |
+| [fibonacci-rec](examples/fibonacci-rec.md) |        |         |      |      |        | ✅     |          |
+| [gnome_sort](examples/gnome_sort.md)       |        | ✅       |      |      |        |       |          |
+| [octuple](examples/octuple.md)             | ✅      | ✅       | ✅    | ✅    |        | ✅     | N/A      |
+| [triangle-rec](examples/triangle-rec.md)   |        |         | ✅    |      |        | ✅     |          |
 
 ## Usage
 
 ### Docker
 
-You can build a Docker container with all verifiers by running the following command. 
+You can build a Docker container with all verifiers by running the following command.
 (Note that this may take about 30 minutes depending on your connection and hardware and takes about 50GB of free space.)
 
 ```bash
