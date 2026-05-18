@@ -3,7 +3,7 @@ use flux_rs::attrs::*;
 
 #[spec(fn(n: u64) -> u64{r: r == (n * (n + 1)) / 2})]
 fn triangle(n: u64) -> u64 {
-    if n == 0 { 0 } else { n + triangle(n - 2) }
+    if n == 0 { 0 } else { n + triangle(n - 1) }
 }
 
 fn main() {
