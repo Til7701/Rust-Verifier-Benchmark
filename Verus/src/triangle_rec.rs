@@ -17,11 +17,13 @@ fn triangle_rec(n: u64) -> (result: u64)
         triangle_rec_spec(n as nat) <= u64::MAX,
     ensures
         result == triangle_rec_spec(n as nat),
+        result == (n * (n + 1)) / 2,
     decreases n,
 {
     if n == 0 {
         0
     } else {
+        assert((((n - 1) * n) / 2) + n == (n * (n + 1)) / 2) by (nonlinear_arith);
         n + triangle_rec(n - 1)
     }
 }
