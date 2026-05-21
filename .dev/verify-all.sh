@@ -39,13 +39,6 @@ cargo kani
 cd ..
 echo "Successfully verified Kani Examples\n\n"
 
-#echo "Verifying Prusti Examples"
-#cd Prusti
-#cargo --version
-#cargo prusti
-#cd ..
-#echo "Successfully verified Prusti Examples\n\n"
-
 echo "Verifying VeriFast Examples"
 cd VeriFast
 cargo --version

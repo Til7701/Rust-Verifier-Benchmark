@@ -92,22 +92,6 @@ COPY --from=kani-build /root/.cargo/bin/kani /root/.cargo/bin/kani
 COPY --from=kani-build /root/.cargo/bin/cargo-kani /root/.cargo/bin/cargo-kani
 COPY --from=kani-build /root/.kani /root/.kani
 
-# Install Prusti
-#RUN apt-get update && apt-get install -y openssl libssl-dev
-#ADD https://github.com/viperproject/prusti-dev.git#auto-update-nightly-2024-01-15 /opt/prusti
-#WORKDIR /opt/prusti
-#RUN ./x.py setup
-#RUN ./x.py build --release --locked
-
-#RUN rustup install nightly-2023-09-15
-#ADD https://github.com/viperproject/prusti-dev/releases/download/v-2024-03-26-1504/prusti-release-ubuntu.zip prusti.zip
-#RUN unzip prusti.zip -d /opt/prusti && rm prusti.zip
-#RUN chmod +x /opt/prusti/cargo-prusti
-#RUN chmod +x /opt/prusti/prusti-rustc
-#RUN chmod +x /opt/prusti/prusti-driver
-#RUN chmod +x /opt/prusti/viper_tools/z3/bin/z3
-#ENV PATH="/opt/prusti:${PATH}"
-
 # Install VeriFast
 ADD --unpack=true https://github.com/verifast/verifast/releases/download/26.01/verifast-26.01-linux.tar.gz /opt/verifast
 ENV PATH="/opt/verifast/verifast-26.01/bin:${PATH}"
