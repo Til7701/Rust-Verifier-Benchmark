@@ -40,63 +40,6 @@ fn main() {
     let r = binary_search(&v, 30);
     assert(r == 3);
 }
-use vstd::prelude::*;
-
-verus! {
-
-fn gnome_sort(v: &mut Vec<i32>)
-    ensures
-        sorted(v@),
-        v@.to_multiset() == old(v)@.to_multiset(),
-{
-    let mut i: usize = 0;
-
-    while i < v.len()
-        invariant
-            i <= v.len(),
-
-            // permutation preserved
-            v@.to_multiset() == old(v)@.to_multiset(),
-
-            // prefix before i is sorted
-            sorted_between(v@, 0, i as int),
-
-            // if i is not at either end, the only possible
-            // disorder is at the boundary (i-1,i)
-            forall|j: int, k: int|
-                0 <= j < k < i ==> v@[j] <= v@[k],
-    {
-        if i == 0 || v[i - 1] <= v[i] {
-            i += 1;
-        } else {
-        let tmp = v[i - 1];
-        v[i - 1] = v[i];
-        v[i] = tmp;
-
-            proof {
-                // show multiset unchanged by swap
-                assert(v@.to_multiset() =~=
-                       old(v)@.to_multiset());
-            }
-
-            i -= 1;
-        }
-    }
-
-    assert(i == v.len());
-}
-
-spec fn sorted(s: Seq<i32>) -> bool {
-    forall|i: int, j: int|
-        0 <= i < j < s.len() ==> s[i] <= s[j]
-}
-
-spec fn sorted_between(s: Seq<i32>, lo: int, hi: int) -> bool {
-    forall|i: int, j: int|
-        lo <= i < j < hi ==> s[i] <= s[j]
-}
-
-}
 
 // fn concatenate_arrays<T: Clone>(x: &[T], y: &[T]) -> (result: Vec<T>)
 //     requires
