@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 mod binary_search;
 mod concat_slices_to_vec;
 mod concat_slices_to_vec_copy;
