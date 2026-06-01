@@ -32,6 +32,8 @@ If an entry is not following the legend, an explanation can be found in the link
 | [ackermann](examples/ackermann.md)                                                         |        |         |      |      |       |          |
 | [binary_search](examples/binary_search.md)                                                 |        |         |      |      | ✅     |          |
 | [concat_slices_to_vec](examples/concat_slices_to_vec.md)                                   |        |         |      |      | ✅     |          |
+| [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)                         |        |         |      |      | ✅     |          |
+| [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)                           |        |         |      |      | (✅)   |          |
 | [fibonacci-rec](examples/fibonacci-rec.md)                                                 |        |         |      |      | ✅     |          |
 | [gnome_sort](examples/gnome_sort.md)                                                       |        | ✅       |      |      | ❌     |          |
 | [octuple](examples/octuple.md)                                                             | ✅      | ✅       | ✅    | ✅    | ✅     | N/A      |

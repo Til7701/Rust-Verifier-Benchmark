@@ -2,29 +2,31 @@ use vstd::prelude::*;
 
 verus! {
 
-fn concat_slices_to_vec<T: Copy>(x: &[T], y: &[T]) -> (result: Vec<T>)
+fn concat_slices_to_vec<T: Clone>(x: &[T], y: &[T]) -> (result: Vec<T>)
     requires
         x.len() + y.len() <= usize::MAX,
     ensures
         result@.len() == x@.len() + y@.len(),
-        result@ =~= x@ + y@,
+        forall|i: int| 0 <= i < x.len() ==> cloned::<T>(#[trigger] x@[i], result@[i]),
+        forall|i: int| 0 <= i < y.len() ==> cloned::<T>(#[trigger] y@[i], result@[x.len() + i]),
 {
     let mut concat = Vec::with_capacity(x.len() + y.len());
 
     for i in 0..x.len()
         invariant
             concat.len() == i,
-            concat@ =~= x@.subrange(0, i as int),
+            forall|j: int| 0 <= j < i ==> cloned::<T>(#[trigger] x@[j], concat@[j]),
     {
-        concat.push(x[i]);
+        concat.push(x[i].clone());
     }
 
     for i in 0..y.len()
         invariant
             concat.len() == x.len() + i,
-            concat@ =~= x@ + y@.subrange(0, i as int),
+            forall|j: int| 0 <= j < x.len() ==> cloned::<T>(#[trigger] x@[j], concat@[j]),
+            forall|j: int| 0 <= j < i ==> cloned::<T>(#[trigger] y@[j], concat@[x.len() + j]),
     {
-        concat.push(y[i]);
+        concat.push(y[i].clone());
     }
 
     concat
