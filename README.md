@@ -30,6 +30,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | Name                                                                                       | Aeneas | Creusot | Flux | Kani | Verus | VeriFast |
 |--------------------------------------------------------------------------------------------|--------|---------|------|------|-------|----------|
 | [ackermann](examples/ackermann.md)                                                         |        |         |      |      |       |          |
+| [concat_slices_to_vec](examples/concat_slices_to_vec.md)                                   |        |         |      |      | ✅     |          |
 | [fibonacci-rec](examples/fibonacci-rec.md)                                                 |        |         |      |      | ✅     |          |
 | [gnome_sort](examples/gnome_sort.md)                                                       |        | ✅       |      |      | ❌     |          |
 | [octuple](examples/octuple.md)                                                             | ✅      | ✅       | ✅    | ✅    | ✅     | N/A      |
