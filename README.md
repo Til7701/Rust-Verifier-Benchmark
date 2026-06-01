@@ -31,7 +31,7 @@ If an entry is not following the legend, an explanation can be found in the link
 |--------------------------------------------------------------------------------------------|--------|---------|------|------|-------|----------|
 | [ackermann](examples/ackermann.md)                                                         |        |         |      |      |       |          |
 | [fibonacci-rec](examples/fibonacci-rec.md)                                                 |        |         |      |      | ✅     |          |
-| [gnome_sort](examples/gnome_sort.md)                                                       |        | ✅       |      |      |       |          |
+| [gnome_sort](examples/gnome_sort.md)                                                       |        | ✅       |      |      | ❌     |          |
 | [octuple](examples/octuple.md)                                                             | ✅      | ✅       | ✅    | ✅    | ✅     | N/A      |
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |        |         |      |      |       |          |
 | [triangle-rec](examples/triangle-rec.md)                                                   |        |         | ✅    |      | ✅     |          |

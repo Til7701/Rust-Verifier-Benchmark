@@ -23,3 +23,13 @@ of Rust Programs. ICFEM 2022 - 23th International Conference on Formal Engineeri
 Madrid, Spain. ⟨hal-03737878⟩
 
 (Updated to use new API: https://github.com/creusot-rs/tutorial/blob/main/src/solutions/ex1_gnome_sort.rs)
+
+## Comments
+
+### Verus
+
+```
+error: complex arguments to &mut parameters are currently unsupported
+```
+
+TODO: Try with `Vec`
