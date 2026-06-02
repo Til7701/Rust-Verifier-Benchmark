@@ -38,6 +38,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [gnome_sort](examples/gnome_sort.md)                                                       |        | ✅       |      |      | ❌     |          |
 | [octuple](examples/octuple.md)                                                             | ✅      | ✅       | ✅    | ✅    | ✅     | N/A      |
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |        |         |      |      |       |          |
+| [ternary_logic](examples/ternary_logic.md)                                                 |        |         |      |      | (✅)   |          |
 | [triangle-rec](examples/triangle-rec.md)                                                   |        |         | ✅    |      | ✅     |          |
 
 ## Usage
