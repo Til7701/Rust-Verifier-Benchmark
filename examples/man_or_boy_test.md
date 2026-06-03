@@ -30,6 +30,8 @@ fn a(
 
 ### Verus
 
+TODO: Check again after Verus update
+
 ```
 error: The verifier does not yet support the following Rust feature: dyn with more that one trait
  --> src/man_or_boy_test.rs:8:5

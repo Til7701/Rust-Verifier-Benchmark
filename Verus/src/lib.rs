@@ -8,4 +8,5 @@ mod division_by_subtraction_remainder_rec;
 mod fibonacci_rec;
 mod octuple;
 mod ternary_logic;
+mod test;
 mod triangle_rec;
