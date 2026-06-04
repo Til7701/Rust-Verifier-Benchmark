@@ -59,13 +59,6 @@ verus! {
 //     {
 //         if node.is_none() {
 //             *node = Some(Box::new(Node { e, next: None }));
-//             proof {
-//                 assert(*node is Some);
-//                 assert(node.unwrap().e == e);
-//                 let s = Node::<T>::optional_as_seq(*node);
-//                 assert(s.len() > 0);
-//                 assert(s.contains(e));
-//             }
 //         } else {
 //             let mut tmp = None;
 //             std::mem::swap(&mut tmp, node);
@@ -83,7 +76,6 @@ verus! {
 //         decreases *old(self),
 //     {
 //         Self::push_into_optional(&mut self.next, e);
-//         assert(Node::<T>::optional_as_seq(self.next).contains(e));
 //     }
 //
 //     fn get_from_optional(node: &Option<Box<Node<T>>>, current: usize) -> (res: Option<&T>)
@@ -99,9 +91,6 @@ verus! {
 //         match node {
 //             None => None,
 //             Some(n) => {
-//                 proof {
-//                     test(*node);
-//                 }
 //                 if current == 0 {
 //                     Some(&n.e)
 //                 } else {
@@ -123,30 +112,13 @@ verus! {
 //     pub closed spec fn as_seq(self) -> Seq<T>
 //         decreases self,
 //     {
-//         let mut seq = Seq::empty();
-//         seq.push(self.e);
-//         seq.add(Node::<T>::optional_as_seq(self.next));
-//         seq
+//         let seq = Seq::empty();
+//       let seq2 =  seq.push(self.e);
+//      let seq3=   seq2.add(Node::<T>::optional_as_seq(self.next));
+//         seq3
 //     }
 // }
-//
-// proof fn test<T>(node: Option<Box<Node<T>>>)
-//     requires
-//         node is Some,
-//     ensures
-//         node is Some && node.unwrap().next is None ==> Node::<T>::optional_as_seq(node).len() == 1,
-// {
-//     let e = node.unwrap().e;
-//
-//     let s = Seq::empty();
-//     s.push(e);
-//     assert(s.len() == 1);
-//
-//     let seq = Node::<T>::optional_as_seq(node);
-//
-//     assert(s =~= seq);
-// }
-//
+
 // fn main() {
 //     let mut list = LinkedList::new();
 //     list.push(5);
