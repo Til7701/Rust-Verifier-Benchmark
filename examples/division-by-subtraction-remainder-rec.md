@@ -10,3 +10,9 @@ fn remainder_rec(n: u64, d: u64) -> (u64, u64) {
     }
 }
 ```
+
+## Comments
+
+### Flux
+
+Using struct with named fields as return type instead of tuple.
