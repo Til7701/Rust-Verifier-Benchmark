@@ -6,7 +6,6 @@ fn concat_slices_to_vec_copy<T: Copy>(x: &[T], y: &[T]) -> (result: Vec<T>)
     requires
         x.len() + y.len() <= usize::MAX,
     ensures
-        result@.len() == x@.len() + y@.len(),
         result@ =~= x@ + y@,
 {
     let mut concat = Vec::with_capacity(x.len() + y.len());
