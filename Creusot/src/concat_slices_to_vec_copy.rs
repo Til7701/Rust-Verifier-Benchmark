@@ -16,3 +16,11 @@ fn concat_slices_to_vec_copy<T: Copy>(x: &[T], y: &[T]) -> Vec<T> {
     }
     concat
 }
+
+fn main() {
+    let l1 = creusot_std::prelude::vec![1, 2, 3, 4, 5];
+    let l2 = creusot_std::prelude::vec![6, 7, 8, 9, 10];
+
+    let c = concat_slices_to_vec_copy(&l1, &l2);
+    proof_assert!(c@ == seq![1i32, 2i32, 3i32, 4i32, 5i32, 6i32, 7i32, 8i32, 9i32, 10i32]);
+}

@@ -1,5 +1,6 @@
 use creusot_std::prelude::*;
 
+#[check(terminates)]
 #[requires(-16i8 <= x1)]
 #[requires(x1 < 16i8)]
 #[ensures(result == x1 * 8i8)]
