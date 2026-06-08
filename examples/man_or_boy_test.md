@@ -28,6 +28,12 @@ fn a(
 
 ## Comments
 
+### Creusot
+
+```
+error: forbidden dyn type: dyn std::ops::Fn() -> i32
+```
+
 ### Verus
 
 TODO: Check again after Verus update
