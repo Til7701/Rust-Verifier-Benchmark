@@ -39,7 +39,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [man_or_boy_test](examples/man_or_boy_test.md)                                             |        | ❌       |      |      | ❌     |          |
 | [octuple](examples/octuple.md)                                                             | ✅      | ✅       | ✅    | ✅    | ✅     | N/A      |
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |        | ✅       | (✅)  |      |       |          |
-| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |        |         |      |      |       |          |
+| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |        | ✅, !T   |      |      |       |          |
 | [ternary_logic](examples/ternary_logic.md)                                                 |        | ✅       |      |      | (✅)   |          |
 | [triangle-rec](examples/triangle-rec.md)                                                   |        | ✅       | ✅    |      | ✅     |          |
 
