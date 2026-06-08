@@ -14,3 +14,9 @@ fn concat_slices_to_vec<T: Clone>(x: &[T], y: &[T]) -> Vec<T> {
     concat
 }
 ```
+
+## Comments
+
+### Creusot
+
+Cannot prove termination due to the loops. https://guide.creusot.rs/v0.11.0/termination.html
