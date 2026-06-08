@@ -14,4 +14,9 @@ fn octuple(x1: i8) -> (x8: i8)
     x4 + x4
 }
 
+fn main() {
+    let r = octuple(3);
+    assert(r == 24);
+}
+
 } // verus!

@@ -34,11 +34,11 @@ If an entry is not following the legend, an explanation can be found in the link
 | [concat_slices_to_vec](examples/concat_slices_to_vec.md)                                   |        |         |      |      | ✅     |          |
 | [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)                         |        |         |      |      | ✅     |          |
 | [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)                           |        |         |      |      | (✅)   |          |
-| [fibonacci-rec](examples/fibonacci-rec.md)                                                 |        |         |      |      | ✅     |          |
 | [gnome_sort](examples/gnome_sort.md)                                                       |        | ✅       |      |      |       |          |
 | [man_or_boy_test](examples/man_or_boy_test.md)                                             |        |         |      |      | ❌     |          |
 | [octuple](examples/octuple.md)                                                             | ✅      | ✅       | ✅    | ✅    | ✅     | N/A      |
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |        |         | (✅)  |      |       |          |
+| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |        |         |      |      |       |          |
 | [ternary_logic](examples/ternary_logic.md)                                                 |        |         |      |      | (✅)   |          |
 | [triangle-rec](examples/triangle-rec.md)                                                   |        |         | ✅    |      | ✅     |          |
 
