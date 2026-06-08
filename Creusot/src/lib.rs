@@ -7,4 +7,5 @@ mod concat_slices_to_vec_copy;
 mod division_by_subtraction_remainder_rec;
 mod gnome_sort;
 mod octuple;
+mod ternary_logic;
 mod triangle_rec;
