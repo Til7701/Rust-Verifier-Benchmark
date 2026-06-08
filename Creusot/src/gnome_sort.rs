@@ -1,18 +1,6 @@
 use creusot_std::prelude::*;
 
-#[logic]
-fn sorted_range<T: OrdLogic>(s: Seq<T>, l: Int, u: Int) -> bool {
-    pearlite! {
-        forall<i, j> l <= i && i < j && j < u ==> s[i] <= s[j]
-    }
-}
-
-#[logic]
-fn sorted<T: OrdLogic>(s: Seq<T>) -> bool {
-    sorted_range(s, 0, s.len())
-}
-
-#[ensures(sorted((^v).deep_model()))]
+#[ensures((^v).deep_model().sorted())]
 #[ensures((^v)@.permutation_of(v@))]
 fn gnome_sort<T: Ord + DeepModel>(v: &mut [T])
 where
@@ -20,7 +8,7 @@ where
 {
     let _old_v = snapshot! { v };
     let mut i = 0;
-    #[invariant(sorted_range(v.deep_model(), 0, i@))]
+    #[invariant(v.deep_model().sorted_range(0, i@))]
     #[invariant(v@.permutation_of(_old_v@))]
     while i < v.len() {
         if i == 0 || v[i - 1] <= v[i] {
