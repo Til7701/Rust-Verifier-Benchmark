@@ -1,17 +1,8 @@
 use flux_rs::assert;
 use flux_rs::attrs::*;
 
-#[refined_by(n: int, d: int, q: int, r: int)]
-#[invariant(d >= 1)]
-#[invariant(d > r)]
-#[invariant(n == d * q + r)]
-#[invariant(q == n / d)]
-#[invariant(r == n % d)]
+#[refined_by(q: int, r: int)]
 struct QR {
-    #[field(u64[n])]
-    n: u64,
-    #[field(u64[d])]
-    d: u64,
     #[field(u64[q])]
     q: u64,
     #[field(u64[r])]
@@ -34,27 +25,24 @@ struct QR {
 //     }
 // }
 
-#[spec(fn(n: u64, d: u64{d >= 1}) -> QR{qr: qr.n == n && qr.d == d && qr.q == n / d && qr.r == n % d})]
+#[spec(fn(n: u64, d: u64{d >= 1}) -> QR{qr: qr.q == n / d && qr.r == n % d})]
 fn remainder_rec(n: u64, d: u64) -> QR {
     if n < d {
-        QR { n, d, q: 0, r: n }
+        QR { q: 0, r: n }
     } else {
         let qr = remainder_rec(n - d, d);
-        let q = qr.q + 1;
-        let r = qr.r;
-        QR { n, d, q, r }
+        QR {
+            q: qr.q + 1,
+            r: qr.r,
+        }
     }
 }
 
 fn main() {
     let res = remainder_rec(10, 3);
-    assert(res.n == 10);
-    assert(res.d == 3);
     assert(res.q == 3);
     assert(res.r == 1);
     // let qr = QR {
-    //     n: 10,
-    //     d: 3,
     //     q: 3,
     //     r: 1,
     // };
