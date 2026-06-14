@@ -12,6 +12,10 @@ fn ack(m: u64, n: u64) -> u64 {
 }
 ```
 
+## Comment
+
+Verifiers cannot prove termination.
+
 ## Source
 
 https://rosettacode.org/wiki/Ackermann_function
