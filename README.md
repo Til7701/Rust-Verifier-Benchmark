@@ -41,7 +41,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |        | ✅       | (✅)  |      |       |          |
 | [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |        | ✅, !T   | ✅    |      | ✅     |          |
 | [ternary_logic](examples/ternary_logic.md)                                                 |        | ✅       |      |      | (✅)   |          |
-| [triangle-rec](examples/triangle-rec.md)                                                   |        | ✅       | ✅    |      | ✅     |          |
+| [triangle-rec](examples/triangle-rec.md)                                                   |        | ✅       | ✅    | ❌    | ✅     |          |
 
 ## Usage
 
