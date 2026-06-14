@@ -19,6 +19,7 @@ pub enum Trit {
 }
 
 impl PartialEq for Trit {
+    #[no_panic]
     #[spec(fn(&Self[@r1], &Self[@r2]) -> bool[r1 == r2])]
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {

@@ -1,6 +1,7 @@
 use flux_rs::assert;
 use flux_rs::attrs::*;
 
+#[no_panic]
 #[spec(fn(n: u64) -> bool{result: (n % 2 == 0) <=> result})]
 fn is_even(n: u64) -> bool {
     if n == 0 {
@@ -9,6 +10,7 @@ fn is_even(n: u64) -> bool {
     is_odd(n - 1)
 }
 
+#[no_panic]
 #[spec(fn(n: u64) -> bool{result: (n % 2 == 1) <=> result})]
 fn is_odd(n: u64) -> bool {
     if n == 0 {

@@ -25,6 +25,7 @@ struct QR {
 //     }
 // }
 
+#[no_panic]
 #[spec(fn(n: u64, d: u64{d >= 1}) -> QR{qr: qr.q == n / d && qr.r == n % d})]
 fn remainder_rec(n: u64, d: u64) -> QR {
     if n < d {
