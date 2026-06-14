@@ -8,6 +8,7 @@ fn triangle_rec(n: u64) -> (result: u64)
     ensures
         result == (n * (n + 1)) / 2,
     decreases n,
+    no_unwind
 {
     if n == 0 {
         0

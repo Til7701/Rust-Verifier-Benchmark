@@ -77,6 +77,8 @@ The not operator `!` seems to crash rustc.
 The implementation of ops traits is not documented well,
 but [this issue](https://github.com/verus-lang/verus/issues/1928) describes how to use them.
 
+Cannot prove absence of panics, since the ops traits have to define it and they don't.
+
 ## Source
 
 https://rosettacode.org/wiki/Ternary_logic

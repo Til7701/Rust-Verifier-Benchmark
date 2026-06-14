@@ -6,6 +6,7 @@ fn is_even(n: u64) -> (result: bool)
     ensures
         (n % 2 == 0) == result,
     decreases n,
+    no_unwind
 {
     if n == 0 {
         return true;
@@ -17,6 +18,7 @@ fn is_odd(n: u64) -> (result: bool)
     ensures
         (n % 2 != 0) == result,
     decreases n,
+    no_unwind
 {
     if n == 0 {
         return false;

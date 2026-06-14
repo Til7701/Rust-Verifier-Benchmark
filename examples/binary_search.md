@@ -21,7 +21,20 @@ fn binary_search(v: &[u64], k: u64) -> usize {
 
 ### Verus
 
-Implemented using `u64` instead of a generic Type. Generic types may be possible, but did not work at first.
+Cannot prove absence of panics, since the slices len function does not ensure it.
+
+```
+error: cannot show this call will not unwind, in function marked 'no_unwind'
+  --> src/binary_search.rs:15:25
+   |
+15 |     let mut i2: usize = v.len() - 1;
+   |                         ^^^^^^^ call to core::slice::impl&%0::len might unwind
+   |
+  ::: /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/vstd-0.0.0-2026-05-31-0205/slice.rs:83:1
+   |
+83 | pub assume_specification<T>[ <[T]>::len ](slice: &[T]) -> (len: usize)
+   | --------------------------------------------------------------------- perhaps you need to mark this function as 'no_unwind'?
+```
 
 ## Source
 

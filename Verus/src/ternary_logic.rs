@@ -122,6 +122,7 @@ impl Trit {
             //self is Maybe && other !is True ==> res is Maybe, // Causes RustRover to mark everything as an error
             self is Maybe && !(other is True) ==> res is Maybe,
             self is False ==> res is True,
+        no_unwind
     {
         match self {
             Trit::True => other,
