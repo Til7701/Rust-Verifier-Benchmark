@@ -35,5 +35,3 @@ Error: 'why3find prove' failed
 Using separate vector initialization and calling `extend_from_slice` twice because `to_vec` is not supported out of the
 box. This might be solved
 with https://verus-lang.github.io/verus/guide/reference-assume-specification.html#assume_specification
-
-Cannot prove absence of panics, since the Vec functions do not ensure it.
