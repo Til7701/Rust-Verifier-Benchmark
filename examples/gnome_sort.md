@@ -28,8 +28,11 @@ Madrid, Spain. ⟨hal-03737878⟩
 
 ### Verus
 
+Could not use `&mut [T]`, since Verus does not support it yet:
+
 ```
 error: complex arguments to &mut parameters are currently unsupported
 ```
 
-TODO: Try with `Vec`
+Also, I could not get it to work with generic `T` yet. Thus implemented with `i32`.
+The main method also does not work yet.

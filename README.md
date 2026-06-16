@@ -38,7 +38,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)                           |             | ❌       |      |      | (✅)     |          |
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |             | ✅       | (✅)  |      | ✅       |          |
 | [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |             | ✅, !T   | ✅    |      | ✅       |          |
-| [gnome_sort](examples/gnome_sort.md)                                                       |             | ✅, !T   |      |      |         |          |
+| [gnome_sort](examples/gnome_sort.md)                                                       |             | ✅, !T   |      |      | (✅)     |          |
 | [man_or_boy_test](examples/man_or_boy_test.md)                                             |             | ❌       |      |      | ❌       |          |
 | [octuple](examples/octuple.md)                                                             | ✅           | ✅       | ✅    | ✅    | ✅       | N/A      |
 | [ternary_logic](examples/ternary_logic.md)                                                 |             | ✅       | ✅    |      | (✅), !P |          |
