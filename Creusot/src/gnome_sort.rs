@@ -20,8 +20,9 @@ where
     }
 }
 
-// fn main() {
-//     let mut v = creusot_std::prelude::vec![10, 0, 543, 24, 31, 30, 10];
-//     gnome_sort(&mut v);
-//     proof_assert!(v@ == seq![0i32, 10i32, 10i32, 24i32, 30i32, 31i32, 543i32]);
-// }
+#[test]
+fn main() {
+    let mut v = creusot_std::prelude::vec![10, 0, 543, 24, 31, 30, 10];
+    gnome_sort(&mut v);
+    proof_assert!(v@ == seq![0i32, 10i32, 10i32, 24i32, 30i32, 31i32, 543i32]);
+}

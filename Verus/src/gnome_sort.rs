@@ -42,31 +42,35 @@ pub assume_specification<T>[ <[T]>::swap ](s: &mut [T], a: usize, b: usize)
 ;
 
 // fn main() {
-// assert(seq![0i32, 1i32].to_multiset() =~= seq![1i32, 0i32].to_multiset());
-//     let mut v = vec![10, 0, 543, 24, 31, 30];
+//     let mut v = vec![10, 0, 543, 24, 31, 30, 10];
+//     let len = v.len();
+//     let ghost v_old = v@;
 //     gnome_sort(&mut v);
-//     assert(v@ =~= seq![0, 10, 24, 30, 31, 543]);
+//     assert(v.len() == len);
+//     assert(forall|i: int, j: int| 0 <= i <= j < v@.len() ==> v@[i] <= v@[j]);
+//     assert(v_old.to_multiset() =~= v@.to_multiset());
+//     assert(v@ =~= seq![0, 10, 10, 24, 30, 31, 543]);
 //
-//     proof {
-//         use vstd::seq_lib::group_seq_properties;
-//         broadcast use group_seq_properties;
-//
-//         let ghost result: Seq<i32> = seq![0, 10, 10, 24, 30, 31, 543];
-//         assert(seq![0i32, 10i32, 10i32, 24i32, 30i32, 31i32, 543i32].to_multiset() =~= seq![
-//             10i32,
-//             0i32,
-//             543i32,
-//             24i32,
-//             31i32,
-//             30i32,
-//             10i32,
-//         ].to_multiset());
-//         assert(v@.to_multiset() == result.to_multiset());
-//         vstd::seq_lib::lemma_sorted_unique(result, v@, |a: i32, b: i32| a <= b);
-//         assert(v@.len() == result.len());
-//         assert(v@.contains(0));
-//         assert(v@ =~= result);
-//     }
+//     // proof {
+//     //     use vstd::seq_lib::group_seq_properties;
+//     //     broadcast use group_seq_properties;
+//     //
+//     //     let ghost result: Seq<i32> = seq![0, 10, 10, 24, 30, 31, 543];
+//     //     assert(seq![0i32, 10i32, 10i32, 24i32, 30i32, 31i32, 543i32].to_multiset() =~= seq![
+//     //         10i32,
+//     //         0i32,
+//     //         543i32,
+//     //         24i32,
+//     //         31i32,
+//     //         30i32,
+//     //         10i32,
+//     //     ].to_multiset());
+//     //     assert(v@.to_multiset() == result.to_multiset());
+//     //     vstd::seq_lib::lemma_sorted_unique(result, v@, |a: i32, b: i32| a <= b);
+//     //     assert(v@.len() == result.len());
+//     //     assert(v@.contains(0));
+//     //     assert(v@ =~= result);
+//     // }
 //
 // }
 } // verus!
