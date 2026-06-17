@@ -1,7 +1,7 @@
 # Ackermann function
 
 ```rust
-fn ack(m: u64, n: u64) -> u64 {
+fn ackermann(m: u64, n: u64) -> u64 {
     if m == 0 {
         n + 1
     } else if n == 0 {
