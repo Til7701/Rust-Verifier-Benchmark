@@ -30,6 +30,11 @@ Error: 1 unproved file
 Error: 'why3find prove' failed
 ```
 
+### Flux
+
+- Had to use `RVec` from Flux instead of `Vec`.
+- Cannot create assertions about the content of the lists, only about the length.
+
 ### Verus
 
 Using separate vector initialization and calling `extend_from_slice` twice because `to_vec` is not supported out of the

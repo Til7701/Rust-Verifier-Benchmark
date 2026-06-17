@@ -20,3 +20,8 @@ fn concat_slices_to_vec<T: Clone>(x: &[T], y: &[T]) -> Vec<T> {
 ### Creusot
 
 Cannot prove termination due to the loops. https://guide.creusot.rs/v0.11.0/termination.html
+
+### Flux
+
+- Had to use `RVec` from Flux instead of `Vec`.
+- Cannot create assertions about the content of the lists, only about the length.

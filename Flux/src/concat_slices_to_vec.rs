@@ -3,7 +3,7 @@ use flux_rs::assert;
 use flux_rs::attrs::*;
 
 #[spec(fn(x: &RVec<T>[@xlen], y: &RVec<T>[@ylen]) -> RVec<T>[xlen + ylen])]
-fn concat_slices_to_vec_copy<T: Copy>(x: &RVec<T>, y: &RVec<T>) -> RVec<T> {
+fn concat_slices_to_vec_copy<T: Clone>(x: &RVec<T>, y: &RVec<T>) -> RVec<T> {
     let mut concat = RVec::new();
 
     let xlen = x.len();
@@ -11,19 +11,13 @@ fn concat_slices_to_vec_copy<T: Copy>(x: &RVec<T>, y: &RVec<T>) -> RVec<T> {
 
     let mut i = 0;
     while i < xlen {
-        // defs!(
-        //     invariant qualifier A(i: int) { 0 <= i && i < xlen && concat == i }
-        // );
-        concat.push(x[i]);
+        concat.push(x[i].clone());
         i += 1;
     }
 
     let mut j = 0;
     while j < ylen {
-        // defs!(
-        //     invariant qualifier B(j: int) { 0 <= j && j < ylen && concat == xlen + j }
-        // );
-        concat.push(y[j]);
+        concat.push(y[j].clone());
         j += 1;
     }
     concat

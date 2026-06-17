@@ -20,3 +20,10 @@ fn concat_slices_to_vec_copy<T: Copy>(x: &[T], y: &[T]) -> Vec<T> {
 ### Creusot
 
 Cannot prove termination due to the loops. https://guide.creusot.rs/v0.11.0/termination.html
+
+### Flux
+
+- Had to use `RVec` from Flux instead of `Vec`.
+- Cannot create assertions about the content of the lists, only about the length.
+- Had to activate `scrape_quals` to get invariants. Manual definition of invariants did not work for the second loop.
+  See test module to see how to declare invariants.

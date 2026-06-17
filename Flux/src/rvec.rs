@@ -1,4 +1,6 @@
-// https://flux-rs.github.io/flux/guide/specifications.html#for-loops-with-range-ij
+// Copied from:
+// https://github.com/flux-rs/flux/blob/009f708f63649f2b0af5cc3f9e6792384cf8eed6/tests/tests/lib/rvec.rs
+// Used by examples instead of Vec
 
 #![allow(dead_code)]
 

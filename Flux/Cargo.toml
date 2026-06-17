@@ -8,3 +8,4 @@ flux-rs = { git = "https://github.com/flux-rs/flux.git", rev = "009f708f63649f2b
 
 [package.metadata.flux]
 enabled = true
+scrape_quals = true
