@@ -33,13 +33,13 @@ If an entry is not following the legend, an explanation can be found in the link
 | Name                                                                                       | Aeneas (!P) | Creusot | Flux | Kani | Verus   | VeriFast |
 |--------------------------------------------------------------------------------------------|-------------|---------|------|------|---------|----------|
 | [ackermann](examples/ackermann.md)                                                         |             | ❌       |      |      | ❌       |          |
-| [binary_search](examples/binary_search.md)                                                 |             |         |      |      | ✅, !P   |          |
+| [binary_search](examples/binary_search.md)                                                 |             |         | ❌    |      | ✅, !P   |          |
 | [concat_slices_to_vec](examples/concat_slices_to_vec.md)                                   |             | ✅, !T   | ⏺️   |      | ✅       |          |
 | [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)                         |             | ✅, !T   | ⏺️   |      | ✅       |          |
 | [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)                           |             | ❌       | ⏺️   |      | (✅)     |          |
 | [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |             | ✅       | (✅)  |      | ✅       |          |
 | [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |             | ✅, !T   | ✅    |      | ✅       |          |
-| [gnome_sort](examples/gnome_sort.md)                                                       |             | ✅, !T   |      |      | (✅), !T |          |
+| [gnome_sort](examples/gnome_sort.md)                                                       |             | ✅, !T   | ❌    |      | (✅), !T |          |
 | [man_or_boy_test](examples/man_or_boy_test.md)                                             |             | ❌       |      |      | ❌       |          |
 | [octuple](examples/octuple.md)                                                             | ✅           | ✅       | ✅    | ✅    | ✅       | N/A      |
 | [ternary_logic](examples/ternary_logic.md)                                                 |             | ✅       | ✅    |      | (✅), !P |          |

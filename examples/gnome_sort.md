@@ -26,6 +26,10 @@ Madrid, Spain. ⟨hal-03737878⟩
 
 ## Comments
 
+### Flux
+
+Flux cannot reason about the content of lists.
+
 ### Verus
 
 Could not use `&mut [T]`, since Verus does not support it yet:

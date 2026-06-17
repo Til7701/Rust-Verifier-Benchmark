@@ -19,6 +19,14 @@ fn binary_search(v: &[u64], k: u64) -> usize {
 
 ## Comments
 
+### Creusot
+
+Cannot prove the required invariants.
+
+### Flux
+
+Flux cannot reason about the content of lists.
+
 ### Verus
 
 Cannot prove absence of panics, since the slices len function does not ensure it.
