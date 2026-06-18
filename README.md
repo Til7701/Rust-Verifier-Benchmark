@@ -4,14 +4,14 @@ A benchmark to compare Rust verifiers. This repository is currently under constr
 
 ## Verifiers
 
-| Verifier | Version                                                                                                 | Links                                                                                                                          |
-|----------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| Aeneas   | [a2fcf19](https://github.com/AeneasVerif/aeneas/tree/a2fcf1923d16684cec638f5503da11acd0ef002d)          | [GitHub](https://github.com/AeneasVerif/aeneas)                                                                                |
-| Creusot  | [0.11.0](https://github.com/creusot-rs/creusot/releases/tag/v0.11.0)                                    | [Website](https://creusot.rs/) \| [GitHub](https://github.com/creusot-rs/creusot)                                              |
-| Flux     | [009f708](https://github.com/flux-rs/flux/tree/009f708f63649f2b0af5cc3f9e6792384cf8eed6)                | [Docs](https://flux-rs.github.io/flux/) \| [GitHub](https://github.com/flux-rs/flux)                                           |
-| Kani     | [0.67.0](https://github.com/model-checking/kani/releases/tag/kani-0.67.0)                               | [Docs](https://model-checking.github.io/kani/getting-started.html) \| [GitHub](https://github.com/model-checking/kani)         |
-| VeriFast | [26.01](https://github.com/verifast/verifast/releases/tag/26.01)                                        | [Docs](https://verifast.github.io/verifast/rust-reference/introduction.html) \| [GitHub](https://github.com/verifast/verifast) |
-| Verus    | [0.2026.05.31.5dd6d83](https://github.com/verus-lang/verus/releases/tag/release%2F0.2026.05.31.5dd6d83) | [Docs](https://verus-lang.github.io/verus/guide/) \| [GitHub](https://github.com/verus-lang/verus)                             |
+| Verifier             | Version                                                                                                 | Links                                                                                                                          |
+|----------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| [Aeneas](Aeneas)     | [a2fcf19](https://github.com/AeneasVerif/aeneas/tree/a2fcf1923d16684cec638f5503da11acd0ef002d)          | [GitHub](https://github.com/AeneasVerif/aeneas)                                                                                |
+| [Creusot](Creusot)   | [0.11.0](https://github.com/creusot-rs/creusot/releases/tag/v0.11.0)                                    | [Website](https://creusot.rs/) \| [GitHub](https://github.com/creusot-rs/creusot)                                              |
+| [Flux](Flux)         | [009f708](https://github.com/flux-rs/flux/tree/009f708f63649f2b0af5cc3f9e6792384cf8eed6)                | [Docs](https://flux-rs.github.io/flux/) \| [GitHub](https://github.com/flux-rs/flux)                                           |
+| [Kani](Kani)         | [0.67.0](https://github.com/model-checking/kani/releases/tag/kani-0.67.0)                               | [Docs](https://model-checking.github.io/kani/getting-started.html) \| [GitHub](https://github.com/model-checking/kani)         |
+| [VeriFast](VeriFast) | [26.01](https://github.com/verifast/verifast/releases/tag/26.01)                                        | [Docs](https://verifast.github.io/verifast/rust-reference/introduction.html) \| [GitHub](https://github.com/verifast/verifast) |
+| [Verus](Verus)       | [0.2026.05.31.5dd6d83](https://github.com/verus-lang/verus/releases/tag/release%2F0.2026.05.31.5dd6d83) | [Docs](https://verus-lang.github.io/verus/guide/) \| [GitHub](https://github.com/verus-lang/verus)                             |
 
 ## Examples
 
@@ -30,21 +30,21 @@ If an entry is not following the legend, an explanation can be found in the link
 | !P    | Cannot prove absence of panics.                                                                |
 | !T    | Cannot prove termination.                                                                      |
 
-| Name                                                                                       | Aeneas (!P) | Creusot | Flux | Kani | Verus   | VeriFast |
-|--------------------------------------------------------------------------------------------|-------------|---------|------|------|---------|----------|
-| [ackermann](examples/ackermann.md)                                                         |             | ❌       |      |      | ❌       |          |
-| [assert](examples/assert.md)                                                               |             | ✅       | ✅    |      | ❌       |          |
-| [binary_search](examples/binary_search.md)                                                 |             |         | ❌    |      | ✅, !P   |          |
-| [concat_slices_to_vec](examples/concat_slices_to_vec.md)                                   |             | ✅, !T   | ⏺️   |      | ✅       |          |
-| [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)                         |             | ✅, !T   | ⏺️   |      | ✅       |          |
-| [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)                           |             | ❌       | ⏺️   |      | (✅)     |          |
-| [division-by-subtraction-remainder-rec](examples/division-by-subtraction-remainder-rec.md) |             | ✅       | (✅)  |      | ✅       |          |
-| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)                                     |             | ✅, !T   | ✅    |      | ✅       |          |
-| [gnome_sort](examples/gnome_sort.md)                                                       |             | ✅, !T   | ❌    |      | (✅), !T |          |
-| [man_or_boy_test](examples/man_or_boy_test.md)                                             |             | ❌       | ❌    | ✅    | ❌       |          |
-| [octuple](examples/octuple.md)                                                             | ✅           | ✅       | ✅    | ✅    | ✅       | N/A      |
-| [ternary_logic](examples/ternary_logic.md)                                                 |             | ✅       | ✅    | ✅    | (✅), !P |          |
-| [triangle-rec](examples/triangle-rec.md)                                                   |             | ✅       | ✅    | (✅)  | ✅       |          |
+| Name                                                                 | Aeneas (!P) | Creusot | Flux    | Kani | Verus   | VeriFast |
+|----------------------------------------------------------------------|-------------|---------|---------|------|---------|----------|
+| [ackermann](examples/ackermann.md)                                   |             | ❌       |         |      | ❌       |          |
+| [assert](examples/assert.md)                                         |             | ✅       | ✅       |      | ❌       |          |
+| [binary_search](examples/binary_search.md)                           |             |         | ❌       |      | ✅, !P   |          |
+| [concat_slices_to_vec_clone](examples/concat_slices_to_vec_clone.md) |             | ✅, !T   | ⏺️, !T  |      | ✅       |          |
+| [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)   |             | ✅, !T   | ⏺️, !T  |      | ✅       |          |
+| [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)     |             | ❌       | ⏺️, !T  |      | (✅)     |          |
+| [div_by_sub_remainder_rec](examples/div_by_sub_remainder_rec.md)     |             | ✅       | (✅), !T |      | ✅       |          |
+| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)               |             | ✅, !T   | ✅, !T   |      | ✅       |          |
+| [gnome_sort](examples/gnome_sort.md)                                 |             | ✅, !T   | ❌       |      | (✅), !T |          |
+| [man_or_boy_test](examples/man_or_boy_test.md)                       |             | ❌       | ❌       | ✅    | ❌       |          |
+| [octuple](examples/octuple.md)                                       | ✅           | ✅       | ✅       | ✅    | ✅       | N/A      |
+| [ternary_logic](examples/ternary_logic.md)                           |             | ✅       | ✅       | ✅    | (✅), !P |          |
+| [triangle_rec](examples/triangle_rec.md)                             |             | ✅       | ✅, !T   | (✅)  | ✅       |          |
 
 ## Usage
 

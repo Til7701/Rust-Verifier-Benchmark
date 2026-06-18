@@ -2,9 +2,9 @@
 
 mod assert;
 mod binary_search;
-mod concat_slices_to_vec;
+mod concat_slices_to_vec_clone;
 mod concat_slices_to_vec_copy;
-mod division_by_subtraction_remainder_rec;
+mod div_by_sub_remainder_rec;
 mod even_odd_mutual_rec;
 mod gnome_sort;
 mod octuple;

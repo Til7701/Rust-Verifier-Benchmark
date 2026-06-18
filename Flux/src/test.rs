@@ -29,3 +29,10 @@ pub fn test(n: usize) -> usize {
     }
     res
 }
+
+#[no_panic]
+#[spec(fn (n: usize) -> usize[n])]
+pub fn test2(n: usize) -> usize {
+    loop {}
+    n
+}
