@@ -22,7 +22,12 @@ fn a(
         },
     };
     let b = || (b.f)(&b);
-    return if k <= 0 { x4() + x5() } else { b() };
+    if k <= 0 { x4() + x5() } else { b() }
+}
+
+fn main() {
+    let result = a(10, &|| 1, &|| -1, &|| -1, &|| 1, &|| 0);
+    assert_eq!(result, -67);
 }
 ```
 
@@ -32,6 +37,20 @@ fn a(
 
 ```
 error: forbidden dyn type: dyn std::ops::Fn() -> i32
+```
+
+### Flux
+
+```
+error: internal compiler error: /opt/flux/crates/flux-middle/src/rty/binder.rs:193:18: unexpected escaping region BoundRegion { var: 0, kind: BrNamed(DefId(0:196 ~ flux_test[aed3]::man_or_boy_test::a::B::'_)) }
+  --> src/man_or_boy_test.rs:28:36
+   |
+28 |             return a(k1.get(), &|| (b.f)(b), x1, x2, x3, x4);
+   |                                    ^^^^^
+
+
+thread 'rustc' (6006) panicked at /opt/flux/crates/flux-middle/src/rty/binder.rs:193:18:
+Box<dyn Any>
 ```
 
 ### Verus
