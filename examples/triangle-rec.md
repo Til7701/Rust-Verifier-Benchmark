@@ -18,3 +18,6 @@ Recursive functions cannot have decreases clauses. Thus, Kani cannot prove termi
 infinitely.
 
 https://model-checking.github.io/kani/reference/experimental/loop-contracts.html#decreases-clause-limitations-and-comparison-with-other-tools
+
+It works, when the function is in the kani context, since then I can use the experimental contracts feature. However,
+then the function is not available at runtime.

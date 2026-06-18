@@ -35,7 +35,7 @@ echo "Verifying Kani Examples"
 cd Kani
 cargo --version
 cargo kani --version
-cargo kani
+cargo kani -Z function-contracts -Z stubbing
 cd ..
 echo "Successfully verified Kani Examples\n\n"
 

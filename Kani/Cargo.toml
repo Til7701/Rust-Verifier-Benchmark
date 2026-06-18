@@ -5,3 +5,6 @@ edition = "2024"
 
 [target.'cfg(kani_ra)'.dependencies]
 kani = { git = "https://github.com/model-checking/kani", rev = "kani-0.67.0" }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }

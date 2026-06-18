@@ -1,6 +1,3 @@
-# Ackermann function
-
-```rust
 fn ackermann(m: u64, n: u64) -> u64 {
     if m == 0 {
         n + 1
@@ -10,16 +7,14 @@ fn ackermann(m: u64, n: u64) -> u64 {
         ackermann(m - 1, ackermann(m, n - 1))
     }
 }
-```
 
-## Comment
+#[cfg(kani)]
+mod verification {
+    use super::*;
 
-Verifiers cannot prove termination.
-
-## Source
-
-https://rosettacode.org/wiki/Ackermann_function
-
-### License
-
-GNU Free Document License 1.3
+    #[kani::proof]
+    fn main() {
+        let a = ackermann(2, 4);
+        assert!(a == 11);
+    }
+}
