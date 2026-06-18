@@ -33,7 +33,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | Name                                                                                       | Aeneas (!P) | Creusot | Flux | Kani | Verus   | VeriFast |
 |--------------------------------------------------------------------------------------------|-------------|---------|------|------|---------|----------|
 | [ackermann](examples/ackermann.md)                                                         |             | ❌       |      |      | ❌       |          |
-| [assert](examples/assert.md)                                                               |             | ✅       | ✅    |      | ❌       |          |
+| [assert](examples/assert.md)                                                               |             | ✅       | ✅    | ✅     | ❌       |          |
 | [binary_search](examples/binary_search.md)                                                 |             |         | ❌    |      | ✅, !P   |          |
 | [concat_slices_to_vec](examples/concat_slices_to_vec.md)                                   |             | ✅, !T   | ⏺️   |      | ✅       |          |
 | [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)                         |             | ✅, !T   | ⏺️   |      | ✅       |          |
