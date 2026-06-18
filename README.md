@@ -30,21 +30,21 @@ If an entry is not following the legend, an explanation can be found in the link
 | !P    | Cannot prove absence of panics.                                                                |
 | !T    | Cannot prove termination.                                                                      |
 
-| Name                                                                 | Main Features                       | Aeneas (!P) | Creusot | Flux    | Kani | Verus   | VeriFast |
-|----------------------------------------------------------------------|-------------------------------------|-------------|---------|---------|------|---------|----------|
-| [ackermann](examples/ackermann.md)                                   | Difficult Recursion                 |             | ❌       |         |      | ❌       |          |
-| [assert](examples/assert.md)                                         | Unreachable Panic                   |             | ✅       | ✅       | ✅    | ❌       |          |
-| [binary_search](examples/binary_search.md)                           | Slices, Termination                 |             |         | ❌       |      | ✅, !P   |          |
-| [concat_slices_to_vec_clone](examples/concat_slices_to_vec_clone.md) | Slices, Vec, Clone                  |             | ✅, !T   | ⏺️, !T  |      | ✅       |          |
-| [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)   | Slices, Vec                         |             | ✅, !T   | ⏺️, !T  |      | ✅       |          |
-| [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)     | Slices, Vec, Standard Library       |             | ❌       | ⏺️, !T  |      | (✅)     |          |
-| [div_by_sub_remainder_rec](examples/div_by_sub_remainder_rec.md)     | Tuples, Non-Linear Arithmetic       |             | ✅       | (✅), !T |      | ✅       |          |
-| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)               | Mutual Recursion                    |             | ✅, !T   | ✅, !T   |      | ✅       |          |
-| [gnome_sort](examples/gnome_sort.md)                                 | Mutable Slices, Termination         |             | ✅, !T   | ❌       |      | (✅), !T |          |
-| [man_or_boy_test](examples/man_or_boy_test.md)                       | Closures, `dyn` Traits, Termination |             | ❌       | ❌       | ✅    | ❌       |          |
-| [octuple](examples/octuple.md)                                       | Arithmetic Overflow                 | ✅           | ✅       | ✅       | ✅    | ✅       | N/A      |
-| [ternary_logic](examples/ternary_logic.md)                           | `std::ops` Traits                   |             | ✅       | ✅       | ✅    | (✅), !P |          |
-| [triangle_rec](examples/triangle_rec.md)                             | Recursion, Non-Linear Arithmetic    |             | ✅       | ✅, !T   | (✅)  | ✅       |          |
+| Name                                                                 | Main Features                       | Aeneas | Creusot | Flux    | Kani | Verus   | VeriFast |
+|----------------------------------------------------------------------|-------------------------------------|--------|---------|---------|------|---------|----------|
+| [ackermann](examples/ackermann.md)                                   | Difficult Recursion                 |        | ❌       |         |      | ❌       |          |
+| [assert](examples/assert.md)                                         | Unreachable Panic                   |        | ✅       | ✅       | ✅    | ❌       |          |
+| [binary_search](examples/binary_search.md)                           | Slices, Termination                 |        |         | ❌       |      | ✅, !P   |          |
+| [concat_slices_to_vec_clone](examples/concat_slices_to_vec_clone.md) | Slices, Vec, Clone                  |        | ✅, !T   | ⏺️, !T  |      | ✅       |          |
+| [concat_slices_to_vec_copy](examples/concat_slices_to_vec_copy.md)   | Slices, Vec                         |        | ✅, !T   | ⏺️, !T  |      | ✅       |          |
+| [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)     | Slices, Vec, Standard Library       |        | ❌       | ⏺️, !T  |      | (✅)     |          |
+| [div_by_sub_remainder_rec](examples/div_by_sub_remainder_rec.md)     | Tuples, Non-Linear Arithmetic       |        | ✅       | (✅), !T |      | ✅       |          |
+| [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)               | Mutual Recursion                    |        | ✅, !T   | ✅, !T   |      | ✅       |          |
+| [gnome_sort](examples/gnome_sort.md)                                 | Mutable Slices, Termination         |        | ✅, !T   | ❌       |      | (✅), !T |          |
+| [man_or_boy_test](examples/man_or_boy_test.md)                       | Closures, `dyn` Traits, Termination |        | ❌       | ❌       | ✅    | ❌       |          |
+| [octuple](examples/octuple.md)                                       | Arithmetic Overflow                 | ✅      | ✅       | ✅       | ✅    | ✅       | N/A      |
+| [ternary_logic](examples/ternary_logic.md)                           | `std::ops` Traits                   |        | ✅       | ✅       | ✅    | (✅), !P |          |
+| [triangle_rec](examples/triangle_rec.md)                             | Recursion, Non-Linear Arithmetic    |        | ✅       | ✅, !T   | (✅)  | ✅       |          |
 
 ## Usage
 
