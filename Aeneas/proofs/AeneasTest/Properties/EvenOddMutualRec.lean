@@ -20,7 +20,7 @@ theorem is_even_spec (n : U64) (h : true) :
     simp [base]
     step*
     simp_all
-    grind
+    agrind
 termination_by n
 decreasing_by scalar_decr_tac
 
@@ -35,7 +35,7 @@ theorem is_odd_spec (n : U64) (h : true) :
     simp [base]
     step*
     simp_all
-    grind
+    agrind
 termination_by n
 decreasing_by scalar_decr_tac
 
