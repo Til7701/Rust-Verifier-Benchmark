@@ -1,5 +1,3 @@
+mod even_odd_mutual_rec;
 mod octuple;
-
-fn add(a: u32, b: u32) -> u32 {
-    a + b
-}
+mod triangle_rec;
