@@ -17,8 +17,8 @@ theorem triangle_rec_spec (n : U64) (h : (n.val * (n.val + 1)) / 2 <= U64.max) :
   else
     simp [base]
     step*
-    simp_all
-    have : (((n.val - 1) * n.val) / 2) + n.val == (n.val * (n.val + 1)) / 2 := by simp_scalar +nonLin
-    grind
+    have a : (((n.val - 1) * n.val) / 2) + n.val = (n.val * (n.val + 1)) / 2 := by simp_scalar; scalar_tac +nonLin
+    simp [*]
+    agrind
 termination_by n
 decreasing_by scalar_decr_tac
