@@ -2,13 +2,13 @@ use vstd::prelude::*;
 
 verus! {
 
-fn binary_search(v: &[u64], k: u64) -> (r: usize)
+fn binary_search(v: &[u64], k: u64) -> (result: usize)
     requires
         forall|i: int, j: int| 0 <= i <= j < v.len() ==> v[i] <= v[j],
         exists|i: int| 0 <= i < v.len() && k == v[i],
     ensures
-        r < v.len(),
-        k == v[r as int],
+        result < v.len(),
+        k == v[result as int],
 {
     let mut i1: usize = 0;
     let mut i2: usize = v.len() - 1;

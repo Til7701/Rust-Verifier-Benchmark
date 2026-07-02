@@ -14,11 +14,11 @@ pub enum Trit {
 impl Not for Trit {
     type Output = Self;
 
-    fn not(self) -> (res: Self)
+    fn not(self) -> (result: Self)
         ensures
-            self is True ==> res is False,
-            self is Maybe ==> res is Maybe,
-            self is False ==> res is True,
+            self is True ==> result is False,
+            self is Maybe ==> result is Maybe,
+            self is False ==> result is True,
     {
         match self {
             Trit::True => Trit::False,
@@ -49,10 +49,10 @@ impl NotSpecImpl for Trit {
 impl BitAnd for Trit {
     type Output = Self;
 
-    fn bitand(self, other: Self) -> (res: Self)
+    fn bitand(self, other: Self) -> (result: Self)
         ensures
-            (self is True && other is True ==> res is True) || (self is False || other is False
-                ==> res is False) || (res is Maybe),
+            (self is True && other is True ==> result is True) || (self is False || other is False
+                ==> result is False) || (result is Maybe),
     {
         match (self, other) {
             (Trit::True, Trit::True) => Trit::True,
@@ -83,10 +83,10 @@ impl BitAndSpecImpl for Trit {
 impl BitOr for Trit {
     type Output = Self;
 
-    fn bitor(self, other: Self) -> (res: Self)
+    fn bitor(self, other: Self) -> (result: Self)
         ensures
-            (self is True || other is True ==> res is True) || (self is False && other is False
-                ==> res is False) || (res is Maybe),
+            (self is True || other is True ==> result is True) || (self is False && other is False
+                ==> result is False) || (result is Maybe),
     {
         match (self, other) {
             (Trit::True, _) | (_, Trit::True) => Trit::True,
@@ -115,13 +115,13 @@ impl BitOrSpecImpl for Trit {
 }
 
 impl Trit {
-    fn imp(self, other: Self) -> (res: Self)
+    fn imp(self, other: Self) -> (result: Self)
         ensures
-            self is True ==> res == other,
-            self is Maybe && other is True ==> res is True,
-            //self is Maybe && other !is True ==> res is Maybe, // Causes RustRover to mark everything as an error
-            self is Maybe && !(other is True) ==> res is Maybe,
-            self is False ==> res is True,
+            self is True ==> result == other,
+            self is Maybe && other is True ==> result is True,
+            //self is Maybe && other !is True ==> result is Maybe, // Causes RustRover to mark everything as an error
+            self is Maybe && !(other is True) ==> result is Maybe,
+            self is False ==> result is True,
         no_unwind
     {
         match self {
@@ -137,11 +137,11 @@ impl Trit {
         }
     }
 
-    fn eqv(self, other: Self) -> (res: Self)
+    fn eqv(self, other: Self) -> (result: Self)
         ensures
-            self is True ==> res == other,
-            self is Maybe ==> res is Maybe,
-            self is False ==> res == NotSpec::not_spec(other),
+            self is True ==> result == other,
+            self is Maybe ==> result is Maybe,
+            self is False ==> result == NotSpec::not_spec(other),
     {
         match self {
             Trit::True => other,
