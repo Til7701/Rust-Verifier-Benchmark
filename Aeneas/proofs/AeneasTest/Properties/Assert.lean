@@ -14,7 +14,7 @@ theorem assert_spec (b : Bool) (h : b) :
   step*
 
 @[step]
-theorem main_spec  (h : b) :
+theorem assert_main_spec  (h : b) :
   assert.main ⦃ _ => b ⦄ := by
   unfold assert.main
   step*

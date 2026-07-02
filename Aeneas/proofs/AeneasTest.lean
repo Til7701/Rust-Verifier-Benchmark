@@ -4,4 +4,3 @@ import AeneasTest.Properties.Assert
 import AeneasTest.Properties.EvenOddMutualRec
 import AeneasTest.Properties.Octuple
 import AeneasTest.Properties.TernaryLogic
---import AeneasTest.Properties.TriangleRec

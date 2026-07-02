@@ -72,7 +72,7 @@ theorem eqv_spec (self : ternary_logic.Trit) (other : ternary_logic.Trit) :
   step*
 
 @[step]
-theorem main_spec :
+theorem ternary_logic_main_spec :
   ternary_logic.main ⦃ _ => true⦄ := by
   unfold ternary_logic.main
   unfold ternary_logic.Trit.Insts.CoreOpsBitNotTrit.not
