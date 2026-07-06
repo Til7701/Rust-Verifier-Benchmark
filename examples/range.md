@@ -58,6 +58,3 @@ fn main() {
 ## Source
 
 https://flux-rs.github.io/flux/tutorial/03-structs.html
-
-### License
-
