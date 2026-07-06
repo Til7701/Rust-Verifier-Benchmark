@@ -8,5 +8,6 @@ mod div_by_sub_remainder_rec;
 mod even_odd_mutual_rec;
 mod gnome_sort;
 mod octuple;
+mod struct_get_set;
 mod ternary_logic;
 mod triangle_rec;

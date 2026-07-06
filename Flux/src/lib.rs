@@ -9,6 +9,7 @@ mod even_odd_mutual_rec;
 mod octuple;
 mod rslice;
 mod rvec;
+mod struct_get_set;
 mod ternary_logic;
 mod test;
 mod triangle_rec;
