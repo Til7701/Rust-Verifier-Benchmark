@@ -43,6 +43,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [gnome_sort](examples/gnome_sort.md)                                 | Loops, Mutable Slices, Termination  |        | ✅, !T   | ❌      |      |          | ⏺️, !T  |
 | [man_or_boy_test](examples/man_or_boy_test.md)                       | Closures, `dyn` Traits, Termination |        | ❌       | ❌      | ✅    |          | ❌       |
 | [octuple](examples/octuple.md)                                       | Arithmetic Overflow                 | ✅      | ✅       | ✅      | ✅    | N/A      | ✅       |
+| [range](examples/range.md)                                           | Struct Fields, Struct Invariant     | ✅      | ✅       | ✅      | ✅    |          | ✅       |
 | [ternary_logic](examples/ternary_logic.md)                           | `std::ops` Traits                   | ✅      | ✅       | ✅      | ✅    |          | (✅), !P |
 | [triangle_rec](examples/triangle_rec.md)                             | Recursion, Non-Linear Arithmetic    | ✅      | ✅       | ✅, !T  | (✅)  |          | ✅       |
 
