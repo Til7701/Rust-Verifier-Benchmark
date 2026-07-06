@@ -17,12 +17,15 @@ theorem triangle_rec_spec (n : U64) (h : (n.val * (n.val + 1)) / 2 ≤ U64.max) 
   else
     simp [base]
     step*
-    have a : ((((n.val - 1) * n.val) / 2) + n.val) = ((n.val * (n.val + 1)) / 2) := by
+    · zify
+      simp [*]
+      agrind
+    · zify
+      simp [*]
+      agrind
+    · simp [*]
       zify
-      simp_scalar
-      --scalar_tac +nonLin
-      agrind -- flipping the hypothesis
-    simp [*]
-    agrind
+      simp [*]
+      agrind
 termination_by n
 decreasing_by scalar_decr_tac

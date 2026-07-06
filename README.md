@@ -44,7 +44,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [man_or_boy_test](examples/man_or_boy_test.md)                       | Closures, `dyn` Traits, Termination |        | ❌       | ❌      | ✅    |          | ❌       |
 | [octuple](examples/octuple.md)                                       | Arithmetic Overflow                 | ✅      | ✅       | ✅      | ✅    | N/A      | ✅       |
 | [ternary_logic](examples/ternary_logic.md)                           | `std::ops` Traits                   | ✅      | ✅       | ✅      | ✅    |          | (✅), !P |
-| [triangle_rec](examples/triangle_rec.md)                             | Recursion, Non-Linear Arithmetic    |        | ✅       | ✅, !T  | (✅)  |          | ✅       |
+| [triangle_rec](examples/triangle_rec.md)                             | Recursion, Non-Linear Arithmetic    | ✅      | ✅       | ✅, !T  | (✅)  |          | ✅       |
 
 ## Usage
 
