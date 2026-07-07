@@ -10,8 +10,13 @@ You can verify all examples implemented using Aeneas by running:
 
 ## Termination
 
-TODO
+In LEAN with
+
+```lean4
+termination_by n
+decreasing_by scalar_decr_tac
+```
 
 ## Panics / Unwinding
 
-TODO
+Modeled as `Result.fail .panic` in return values.

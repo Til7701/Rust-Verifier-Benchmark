@@ -55,6 +55,13 @@ fn main() {
 }
 ```
 
+## Comments
+
+### Aeneas
+
+I had to rename the local variable `range` in the `main` function to avoid a name clash with the module name in the
+LEAN translation.
+
 ## Source
 
 https://flux-rs.github.io/flux/tutorial/03-structs.html
