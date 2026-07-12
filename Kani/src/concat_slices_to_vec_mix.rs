@@ -17,5 +17,8 @@ mod verification {
         let concat = concat_slices_to_vec_mix(&x, &y);
 
         assert_eq!(concat.len(), x.len() + y.len());
+        if x.len() > 0 {
+            assert_eq!(concat[0], x[0]);
+        }
     }
 }
