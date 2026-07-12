@@ -1,6 +1,7 @@
 import AeneasTest.Code.Funs
 import AeneasTest.Code.Types
 import AeneasTest.Properties.Assert
+import AeneasTest.Properties.ConcatSlicesToVecMix
 import AeneasTest.Properties.EvenOddMutualRec
 import AeneasTest.Properties.Octuple
 import AeneasTest.Properties.Range
