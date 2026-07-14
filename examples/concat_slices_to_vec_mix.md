@@ -22,7 +22,7 @@ Does not have specs for range iterators
 
 ### Creusot
 
-Cannot prove termination due to the loops. https://guide.creusot.rs/v0.11.0/termination.html
+Cannot prove termination due to the loops. https://guide.creusot.rs/termination.html
 
 ### Flux
 
