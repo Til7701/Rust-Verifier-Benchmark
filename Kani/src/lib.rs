@@ -1,4 +1,6 @@
 #![allow(dead_code)]
+#![feature(stmt_expr_attributes)]
+#![feature(proc_macro_hygiene)]
 
 mod ackermann;
 mod assert;
