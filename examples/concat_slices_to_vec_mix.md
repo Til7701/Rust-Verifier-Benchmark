@@ -28,7 +28,7 @@ Cannot prove termination due to the loops. https://guide.creusot.rs/termination.
 
 - Had to use `RVec` from Flux instead of `Vec`.
 - Cannot create assertions about the content of the lists, only about the length.
-- Had to activate `scrape_quals` to get invariants. Manual definition of invariants did not work for the second loop.
+- Had to activate `scrape_quals` to get invariants. Manual definition of invariants did not work for the loop.
   See test module to see how to declare invariants.
 
 ### Kani

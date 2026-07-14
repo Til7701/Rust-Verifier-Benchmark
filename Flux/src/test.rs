@@ -30,3 +30,9 @@ pub fn test(n: usize) -> usize {
     }
     res
 }
+
+#[spec(fn(n: usize) -> usize[n])]
+pub fn while_true(n: usize) -> usize {
+    while n == n {}
+    n
+}
