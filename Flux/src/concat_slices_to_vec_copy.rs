@@ -2,6 +2,7 @@ use crate::rvec::RVec;
 use flux_rs::assert;
 use flux_rs::attrs::*;
 
+#[opts(scrape_quals = true)]
 #[spec(fn(x: &RVec<T>[@xlen], y: &RVec<T>[@ylen]) -> RVec<T>[xlen + ylen])]
 fn concat_slices_to_vec_copy<T: Copy>(x: &RVec<T>, y: &RVec<T>) -> RVec<T> {
     let mut concat = RVec::new();
