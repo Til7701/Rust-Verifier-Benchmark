@@ -6,7 +6,7 @@ Concat two slices of any type implementing `Copy` and return it as a `Vec<T>`.
 fn concat_slices_to_vec_mix<T: Copy>(x: &[T], y: &[T]) -> Vec<T> {
     let mut concat = x.to_vec();
 
-    for e in y.iter() {
+    for e in y {
         concat.push(*e);
     }
 
