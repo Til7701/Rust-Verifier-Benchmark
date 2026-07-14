@@ -10,8 +10,8 @@ fn concat_slices_to_vec_mix<T: Copy>(x: &[T], y: &[T]) -> (result: Vec<T>)
         forall|i: int| 0 <= i < x.len() ==> cloned::<T>(#[trigger] x[i], result[i]),
         result@.skip(x.len() as int) =~= y@,
 {
-    let mut concat = Vec::with_capacity(x.len() + y.len());
-    concat.extend_from_slice(&x);
+    let mut concat = Vec::new();
+    concat.extend_from_slice(x);
 
     for e in iter: y
         invariant
