@@ -10,8 +10,9 @@ cargo kani -Z function-contracts -Z stubbing
 
 ## Termination
 
-TODO
+Checks for termination of loops. You can opt out with the decreases clause `decreases *`.
+Does not check termination of recursive functions.
 
 ## Panics / Unwinding
 
-TODO
+Disallows panics.
