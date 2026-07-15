@@ -6,6 +6,7 @@ mod ackermann;
 mod assert;
 mod binary_search;
 mod concat_slices_to_vec_mix;
+mod concat_slices_to_vec_mix_unbounded;
 mod man_or_boy_test;
 mod octuple;
 mod range;
