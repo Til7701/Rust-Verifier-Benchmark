@@ -33,6 +33,24 @@ fn main() {
 
 ## Comments
 
+### Aeneas
+
+```
+[Error] Detected groups of mixed mutually recursive definitions (such as a type mutually recursive with a function, or a function mutually recursive with a trait implementation):
+
+# Group 1:
+- fun decl(Source: 'src/test.rs', lines 3:0-23:1): aeneas_test::test::a
+- trait impl(Source: 'src/test.rs', lines 16:12-19:9): aeneas_test::test::a::{core::ops::function::FnOnce<(&'_ (aeneas_test::test::a::B<'_>)), i32> for aeneas_test::test::a::closure<0, 1, 2, 3, 4, 5, 6, 7, 8>}
+- trait impl(Source: 'src/test.rs', lines 16:12-19:9): aeneas_test::test::a::{core::ops::function::FnMut<(&'_ (aeneas_test::test::a::B<'_>)), i32> for aeneas_test::test::a::closure<0, 1, 2, 3, 4, 5, 6, 7, 8>}
+- trait impl(Source: 'src/test.rs', lines 16:12-19:9): aeneas_test::test::a::{core::ops::function::Fn<(&'_ (aeneas_test::test::a::B<'_>)), i32> for aeneas_test::test::a::closure<0, 1, 2, 3, 4, 5, 6, 7, 8>}
+- fun decl(Source: 'src/test.rs', lines 16:12-19:9): aeneas_test::test::a::{core::ops::function::FnOnce<(&'_ (aeneas_test::test::a::B<'_>)), i32> for aeneas_test::test::a::closure<0, 1, 2, 3, 4, 5, 6, 7, 8>}::call_once
+- fun decl(Source: 'src/test.rs', lines 16:12-19:9): aeneas_test::test::a::{core::ops::function::FnMut<(&'_ (aeneas_test::test::a::B<'_>)), i32> for aeneas_test::test::a::closure<0, 1, 2, 3, 4, 5, 6, 7, 8>}::call_mut
+- fun decl(Source: 'src/test.rs', lines 16:12-19:9): aeneas_test::test::a::{core::ops::function::Fn<(&'_ (aeneas_test::test::a::B<'_>)), i32> for aeneas_test::test::a::closure<0, 1, 2, 3, 4, 5, 6, 7, 8>}::call
+
+[Error] Mixed declaration groups (which contain both type and function declarations or functions and traits, for instance) are not supported yet: [13, 13, 14, 15, 240, 241, 242]
+[Error] Dynamic trait types are not supported yet
+```
+
 ### Creusot
 
 ```
