@@ -3,6 +3,7 @@ import AeneasTest.Code.Types
 import AeneasTest.Properties.Assert
 import AeneasTest.Properties.ConcatSlicesToVecMix
 import AeneasTest.Properties.EvenOddMutualRec
+import AeneasTest.Properties.GetFstMut
 import AeneasTest.Properties.Octuple
 import AeneasTest.Properties.Range
 import AeneasTest.Properties.TriangleRec

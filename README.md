@@ -41,6 +41,7 @@ If an entry is not following the legend, an explanation can be found in the link
 | [concat_slices_to_vec_std](examples/concat_slices_to_vec_std.md)     | Slices, Vec, Standard Library        |        | ❌       | ⏺️, !T |      |          | (✅)     |
 | [div_by_sub_remainder_rec](examples/div_by_sub_remainder_rec.md)     | Tuples, Non-Linear Arithmetic        |        | ✅       | ⏺️, !T |      |          | ✅       |
 | [even_odd_mutual_rec](examples/even_odd_mutual_rec.md)               | Mutual Recursion                     | ✅      | ✅, !T   | ✅, !T  |      |          | ✅       |
+| [get_mut_fst](examples/get_mut_fst.md)                               | Multiple Mutable Borrows             | ✅      | ✅       | ❌      | ✅    |          | ✅       |
 | [gnome_sort](examples/gnome_sort.md)                                 | Loops, Mutable Slices, Termination   |        | ✅, !T   | ❌      |      |          | ⏺️, !T  |
 | [man_or_boy_test](examples/man_or_boy_test.md)                       | Closures, `dyn` Traits, Termination  | ❌      | ❌       | ❌      | ✅    |          | ❌       |
 | [octuple](examples/octuple.md)                                       | Arithmetic Overflow                  | ✅      | ✅       | ✅      | ✅    | N/A      | ✅       |

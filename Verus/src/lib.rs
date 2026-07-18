@@ -7,6 +7,7 @@ mod concat_slices_to_vec_mix;
 mod concat_slices_to_vec_std;
 mod div_by_sub_remainder_rec;
 mod even_odd_mutual_rec;
+mod get_mut_fst;
 mod gnome_sort;
 mod octuple;
 mod range;
