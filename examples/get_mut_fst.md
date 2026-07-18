@@ -9,7 +9,7 @@ fn main() {
     let mut pair = (10, 20);
     let r = get_mut_fst(&mut pair);
     *r = 100;
-    assert_eq!(pair, (100i32, 20i32));
+    assert_eq!(pair, (100, 20));
 }
 ```
 
