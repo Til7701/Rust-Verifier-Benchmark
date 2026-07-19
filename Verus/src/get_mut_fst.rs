@@ -2,10 +2,11 @@ use vstd::prelude::*;
 
 verus! {
 
-fn get_mut_fst<A, B>(pair: &mut (A, B)) -> (ret: &mut A)
+fn get_mut_fst<A, B>(pair: &mut (A, B)) -> (result: &mut A)
     ensures
-        *ret == old(pair).0,
-        *final(pair) == (*final(ret), old(pair).1),
+        *result == old(pair).0,
+        *final(pair) == (*final(result), old(pair).1),
+    no_unwind
 {
     &mut pair.0
 }
