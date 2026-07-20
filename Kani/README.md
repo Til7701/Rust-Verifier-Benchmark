@@ -5,12 +5,12 @@
 You can verify all examples implemented using Kani by running:
 
 ```bash
-cargo kani -Z function-contracts -Z stubbing
+./verify.sh
 ```
 
 ## Termination
 
-Checks for termination of loops. You can opt out with the decreases clause `decreases *`.
+Checks for termination of loops if a decreases clause is present.
 Does not check termination of recursive functions.
 
 ## Panics / Unwinding
