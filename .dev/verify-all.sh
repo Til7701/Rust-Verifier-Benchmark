@@ -28,7 +28,7 @@ echo "Verifying Kani Examples"
 cd Kani
 cargo --version
 cargo kani --version
-cargo kani -Z function-contracts -Z stubbing -Z loop-contracts
+./verify.sh
 cd ..
 echo "Successfully verified Kani Examples\n\n"
 
